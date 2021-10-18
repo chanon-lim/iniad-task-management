@@ -1,0 +1,88 @@
+.header{
+    padding:10px 16px;
+    background-color: lightcyan;
+}
+
+/*Page Content*/
+.content{
+    padding:16px
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.sticky + .content {
+    padding-top: 102px;
+}
+
+#activeUsers{
+    text-align:center;
+    color:darkturquoise;
+    font-weight: bolder;
+    margin:auto;
+    padding:0px 16px 16px ;
+
+
+}
+
+.icon {
+    padding: 25px;
+    cursor: pointer;
+}
+
+/*increase the size of icon*/
+.bi{
+    font-size:18px;
+    color:darkslateblue;
+    font-weight:bold;
+    
+}
+
+.midText{
+    text-align:center;
+    color:darkturquoise;
+    font-weight: bold;
+}
+
+.custom-select{
+    text-align:center;
+    position: center;
+    font-family: Arial;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightcyan;
+    color:darkturquoise;
+    font-weight: bolder;
+    font-size: 20px;
+    padding:20px 25px 25px;
+    
+
+  }
+
+  .forum {
+    padding:0px 150px 0;
+    text-decoration-line:underline;
+    cursor: pointer;
+  }
+  
+
+  .taskSchedule{
+    padding:0px 150px;
+    text-decoration-line:underline;
+    cursor: pointer;
+  }
+
+  .homePage{
+    padding:0px 150px;
+    text-decoration-line:underline;
+    cursor: pointer;
+  }
