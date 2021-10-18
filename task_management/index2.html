@@ -17,7 +17,7 @@
                     alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
                     alert('Current view: ' + info.view.type);
                     // change the day's background color just for fun
-                    info.dayEl.style.backgroundColor = 'red';
+                    // info.dayEl.style.backgroundColor = 'red';
                 }
             });
             calendar.render();
@@ -36,9 +36,14 @@
                     <div class="col-4">
                         <h1>Event flow</h1>
                         <button type="button" onclick="openPopup()">Create event</button>
+                        <button type="button" onclick="saveData()">Save data</button>
+                        <!--This div is to display the event title-->
+                        <div id="event-flow"></div>
                     </div>
                     <div class="col-3">
                         <h1>Tag search</h1>
+                        <label for="tag_search">Tag search:</label>
+                        <input id="tag_search" type="text">
                     </div>
                 </div>
             </div>
@@ -47,9 +52,19 @@
                 <div style="border: solid; background-color: white;">
                     <h1>Create event box</h1>
                     <form>
-                        <label for="id_name">Event title</label>
-                        <input id="id_name" type="text">
+                        <label for="id_title">Event title</label>
+                        <input class="my-input-field" id="id_title" type="text" style="display: block;">
+                        <label for="id_content">Content</label>
+                        <input class="my-input-field" id="id_content" type="text" style="display: block;">
+                        <label for="id_date">Date (eg: 2021/10/23)</label>
+                        <input class="my-input-field" id="id_date" type="text" style="display: block;">
+                        <label for="id_time">Time (eg: 0816 for 08:16)</label>
+                        <input class="my-input-field" id="id_time" type="text" style="display: block;">
+                        <label for="id_tag">Tag</label>
+                        <input class="my-input-field" id="id_tag" type="text" style="display: block;">
                     </form>
+                    <button type="button" onclick="onSave()">Save</button>
+                    <button type="button" onclick="onClose()">Close</button>
                 </div>
             </div>
         </div>
