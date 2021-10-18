@@ -62,16 +62,11 @@ body {
 /* Content */
 /* ------- */
 
-.container {
-    padding: 0;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-}
-
 .content {
     padding: 0;
     margin-left: 250px;
     transition: 0.5s;
+    box-sizing: border-box;
 }
 
 .dashboard-col {
@@ -217,8 +212,4 @@ body {
     /* ------- */
     /* Content */
     /* ------- */
-
-    .dashboard-col {
-        padding: 0;
-    }
 }
