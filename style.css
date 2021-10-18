@@ -3,7 +3,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden !important; 
     font-family: "Roboto", sans-serif;
 }
 
@@ -64,11 +64,12 @@ body {
 
 .container {
     padding: 0;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 .content {
     padding: 0;
-    padding-left: 12px;
     margin-left: 250px;
     transition: 0.5s;
 }
@@ -126,7 +127,7 @@ body {
     }
 
     .content.active {
-        margin-top: 0;
+        margin-top: 300px;
     }
 
     /* --------------- */
@@ -178,8 +179,11 @@ body {
     /* ------------- */
 
     .mobile-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
         background: #17194C;
-        z-index: 1;
+        z-index: 98;
         margin-top: 70px;
         padding-bottom: 20px;
         user-select: none;
@@ -188,7 +192,6 @@ body {
 
     .mobile-nav .mobile-nav-items {
         background: #17194C;
-
         transition: all 0.5s ease;
     }
 
@@ -209,5 +212,13 @@ body {
 
     .mobile-nav.active {
         display: block !important; 
+    }
+
+    /* ------- */
+    /* Content */
+    /* ------- */
+
+    .dashboard-col {
+        padding: 0;
     }
 }
