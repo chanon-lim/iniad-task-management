@@ -60,15 +60,15 @@
                 <span class="logo-name">Website Logo</span>
             </a>
         </div>
-        <a href="#" class="links">
+        <a href="#" class="links" onclick="openPage('task-scheduler', this, 'white')">
             <i class="far fa-question-circle"></i>
             <span title="hover text" class="links-name">Task Dashboard</span>
         </a>
-        <a href="#" class="links">
+        <a href="#" class="links" onclick="openPage('forum', this, 'white')">
             <i class="far fa-question-circle"></i>
             <span title="hover text" class="links-name">Forum</span>
         </a>
-        <a href="#" class="links">
+        <a href="#" class="links" onclick="openPage('buddy-finder', this, 'white')">
             <i class="far fa-question-circle"></i>
             <span title="hover text" class="links-name">Study Buddy</span>
         </a>
@@ -80,7 +80,8 @@
     <!-- Sidebar Section End -->
 
     <!-- Content Section -->
-    <div class="content">
+    <!-- Task scheduler section-->
+    <div class="content mytabcontent" id="task-scheduler">
         <div class="container">
             <div class="row">
                 <div class="col-4 col-today">
@@ -131,6 +132,34 @@
             </div>
         </div>
     </div>
+
+    <div class="content mytabcontent" id="forum">
+        <div class="container">
+            <h1>This is forum page</h1>
+        </div>
+    </div>
+
+    <div class="content mytabcontent" id="buddy-finder">
+        <div class="container">
+            <h1>This is buddy finder page</h1>
+        </div>
+    </div>
+
+    <!-- <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    Calendar part
+                </div>
+                <div class="col-4">
+                    Event flow
+                </div>
+                <div class="col-4">
+                    Tag search
+                </div>
+            </div>
+        </div>
+    </div> -->
     <!-- Content Section End -->
 
     <!-- JavaScript -->
