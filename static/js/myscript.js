@@ -155,23 +155,38 @@ function createEventTitle(eventObj) {
     let title = eventObj.getTitle();
     let content = eventObj.getContent();
     let deadline = eventObj.getNotifyTime();
-    let div = document.createElement("div");
+
+    let divCard = document.createElement("div");
+    let divCardBody = document.createElement("div");
     let eventTitleBannerColor = setEventTitleBannerColor(eventObj);
-    div.style = "background: " + eventTitleBannerColor;
-    let heading = document.createElement("h4");
+    let heading = document.createElement("h5");
     let headtext = document.createTextNode(title);
-    heading.appendChild(headtext);
-    div.appendChild(heading);
     let eventFlowPane = document.getElementById("event-flow");
-    eventFlowPane.appendChild(div);
+
+    divCard.classList.add("card", eventTitleBannerColor);
+    divCard.appendChild(divCardBody);
+    divCardBody.classList.add("card-body");
+    heading.classList.add("card-title");
+    heading.appendChild(headtext);
+    divCardBody.appendChild(heading);
+
+    eventFlowPane.appendChild(divCard);
 }
 
 function displayNoUpcomingEvent(parentElement) {
     // this is the <p> tag for display "There is no upcoming event" text
+    let div = document.createElement("div");
+    let img = document.createElement("i");
     let noUpcomingEvent = document.createElement("p");
     let text = document.createTextNode("There is no upcoming event!");
+    
+    div.classList.add("no-task");
+    div.appendChild(img);
+    div.appendChild(noUpcomingEvent);
+    img.classList.add("fas", "fa-tasks");
     noUpcomingEvent.appendChild(text);
-    parentElement.appendChild(noUpcomingEvent);
+
+    parentElement.appendChild(div);
 }
 
 /**This method update the Event flow pane  
