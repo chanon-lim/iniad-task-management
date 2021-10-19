@@ -78,6 +78,7 @@ function createEventTitle(eventObj) {
     let content = eventObj.getContent();
     let deadline = eventObj.getNotifyTime();
     let div = document.createElement("div");
+    div.style = "background: yellow;";
     let heading = document.createElement("h4");
     let headtext = document.createTextNode(title);
     heading.appendChild(headtext);
@@ -120,10 +121,10 @@ function onSave() {
     let tag = data[4];
     let datedata = data[2].split('/');
     // alert(datedata); //2021,10,23
-    let year = Number(datedata[0]);
+    let year = Number(datedata[2]);
     // alert(typeof(year)); //Number
-    let month = Number(datedata[1]);
-    let day = Number(datedata[2]);
+    let month = Number(datedata[0]);
+    let day = Number(datedata[1]);
     let hour = Number(data[3].slice(0, 2));
     let min = Number(data[3].slice(2, 4));
     let eventdate = new Date(year, month-1, day, hour, min);
