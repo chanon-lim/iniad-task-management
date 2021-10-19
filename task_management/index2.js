@@ -119,12 +119,14 @@ function onSave() {
     let title = data[0];
     let content = data[1];
     let tag = data[4];
-    let datedata = data[2].split('/');
+    let datedata = data[2].split('-');
+    console.log('datedata: ', datedata);
+    console.log('type of datedata:', typeof(datedata));
     // alert(datedata); //2021,10,23
-    let year = Number(datedata[2]);
+    let year = Number(datedata[0]);
     // alert(typeof(year)); //Number
-    let month = Number(datedata[0]);
-    let day = Number(datedata[1]);
+    let month = Number(datedata[1]);
+    let day = Number(datedata[2]);
     let hour = Number(data[3].slice(0, 2));
     let min = Number(data[3].slice(2, 4));
     let eventdate = new Date(year, month-1, day, hour, min);
