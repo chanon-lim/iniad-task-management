@@ -22,13 +22,33 @@ $(function () {
     });
 });
 
+// Timepicker
 $('#id_time').timepicki({
     show_meridian: false,
     start_time: ["00", "00"],
     max_hour_value: 23
-}); 
+});
 
 // Calendar
+document.addEventListener("DOMContentLoaded", function () {
+    var calendarEl = document.getElementById("calendar");
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialDate: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
+        businessHours: true,
+        dayMaxEvents: true,
+        themeSystem: 'bootstrap',
+        height: 400,
+        // dateClick: function (info) {
+        //     alert('Clicked on: ' + info.dateStr);
+        //     alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+        //     alert('Current view: ' + info.view.type);
+        //     // change the day's background color just for fun
+        //     // info.dayEl.style.backgroundColor = 'red';
+        // }
+    });
+    calendar.render();
+});
+
 class CalendarEvent {
     constructor(title, content, tag, notifyTime) {
         this.title = title;
