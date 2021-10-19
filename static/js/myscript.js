@@ -24,7 +24,8 @@ $(function () {
 
 $('#id_time').timepicki({
     show_meridian: false,
-    start_time: ["00", "00"]
+    start_time: ["00", "00"],
+    max_hour_value: 23
 }); 
 
 // Calendar
