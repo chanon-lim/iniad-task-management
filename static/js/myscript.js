@@ -124,6 +124,28 @@ function notifyEvent() {
     run();
 }
 
+/**This method return the color will be display of event title banner in Event Flow
+ * The color depends on the urgency of event
+ * if 1 day left -> red
+ * if 1 < ... < 3 -> yellow
+ * else green
+*/
+function setEventTitleBannerColor(eventObj) {
+    let now = new Date();
+    let eventNotifyTime = eventObj.getNotifyTime();
+    if ((eventNotifyTime - now) < 1*24*60*60*1000) {
+        //less than 1 day
+        return "red";
+    }
+    else if ((eventNotifyTime - now) < 3*24*60*60*1000) {
+        // more than 1 day but less than 3 days
+        return "yellow";
+    }
+    else {
+        return "green"
+    }
+}
+
 /**This method create event title in event flow 
  * eventObj is the CalendarEvent object
  * use that to get the data for event title
@@ -134,7 +156,8 @@ function createEventTitle(eventObj) {
     let content = eventObj.getContent();
     let deadline = eventObj.getNotifyTime();
     let div = document.createElement("div");
-    div.style = "background: yellow;";
+    let eventTitleBannerColor = setEventTitleBannerColor(eventObj);
+    div.style = "background: " + eventTitleBannerColor;
     let heading = document.createElement("h4");
     let headtext = document.createTextNode(title);
     heading.appendChild(headtext);
