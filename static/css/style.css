@@ -201,11 +201,17 @@ a {
 /* ----- */
 
 #mycreateEventBox {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 #mycreateEventBox.active {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
 }
 
 .popup-box {
@@ -222,6 +228,7 @@ a {
     background-color: #fff;
     z-index: 10;
     box-shadow: #000 0 2px 18px;
+    
 }
 
 .popup-box .popup-header {
