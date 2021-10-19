@@ -71,13 +71,16 @@ function notifyEvent() {
     run();
 }
 
-/**This method create event title in event flow */
+/**This method create event title in event flow 
+ * That event title includes Title, content, deadliine
+*/
 function createEventTitle(eventObj) {
     // alert("fired!")
     let title = eventObj.getTitle();
     let content = eventObj.getContent();
     let deadline = eventObj.getNotifyTime();
     let div = document.createElement("div");
+    // make Title
     let heading = document.createElement("h4");
     let headtext = document.createTextNode(title);
     heading.appendChild(headtext);
