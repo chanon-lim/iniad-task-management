@@ -124,7 +124,10 @@ function notifyEvent() {
     run();
 }
 
-/**This method create event title in event flow */
+/**This method create event title in event flow 
+ * eventObj is the CalendarEvent object
+ * use that to get the data for event title
+*/
 function createEventTitle(eventObj) {
     // alert("fired!")
     let title = eventObj.getTitle();
@@ -140,7 +143,17 @@ function createEventTitle(eventObj) {
     eventFlowPane.appendChild(div);
 }
 
-/**This method update the Event flow pane  */
+function displayNoUpcomingEvent(parentElement) {
+    // this is the <p> tag for display "There is no upcoming event" text
+    let noUpcomingEvent = document.createElement("p");
+    let text = document.createTextNode("There is no upcoming event!");
+    noUpcomingEvent.appendChild(text);
+    parentElement.appendChild(noUpcomingEvent);
+}
+
+/**This method update the Event flow pane  
+ * It will delete all current event in the Event Flow then create new Event title
+*/
 function updateEventFlow() {
     let eventFlowPane = document.getElementById("event-flow");
     let allEvent = eventFlowPane.childNodes;
@@ -152,6 +165,7 @@ function updateEventFlow() {
     //     event.remove();
     // }
     if (allEventNumber === 0) {
+        //do nothing
     }
     else {
     let firstEventTitle = eventFlowPane.firstElementChild;
@@ -162,6 +176,9 @@ function updateEventFlow() {
     }
     for (let event of eventFlow) {
         createEventTitle(event);
+    }
+    if (eventFlow.length === 0) {
+        displayNoUpcomingEvent(eventFlowPane);
     }
 }
 
