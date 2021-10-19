@@ -3,16 +3,24 @@ let btn = document.querySelector("#collapse-btn");
 let navbar = document.querySelector(".mobile-nav");
 let content = document.querySelector(".content");
 
-btn.onclick = function() {
+btn.onclick = function () {
     navbar.classList.toggle("active");
     content.classList.toggle("active");
 }
 
 // Date for today tab
 let today = new Date();
-let date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+let date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
 document.querySelector(".today-date").innerHTML = date;
 
+// Datepicker
+$(function () {
+    $("#id_date").datepicker({
+        dateFormat: 'yy/mm/dd',
+        changeMonth: true,
+        changeYear: true,
+    });
+});
 
 // Calendar
 class CalendarEvent {
@@ -130,21 +138,24 @@ function onSave() {
     let day = Number(datedata[2]);
     let hour = Number(data[3].slice(0, 2));
     let min = Number(data[3].slice(2, 4));
-    let eventdate = new Date(year, month-1, day, hour, min);
+    let eventdate = new Date(year, month - 1, day, hour, min);
     // alert(year, month, day, hour, min);
     let event = new CalendarEvent(title, content, tag, eventdate);
-    
+
     //now add to the data structure
     eventFlow.push(event);
-    eventFlow.sort(function(a, b){return a.notifyTime - b.notifyTime});
+    eventFlow.sort(function (a, b) {
+        return a.notifyTime - b.notifyTime
+    });
 
     let monthID = String(year) + "@" + String(month);
     // alert(monthID); OK
     if (monthData.hasOwnProperty(monthID)) {
         monthData[monthID].push(event);
-        monthData[monthID].sort(function(a, b){return a.notifyTime - b.notifyTime});
-    }
-    else {
+        monthData[monthID].sort(function (a, b) {
+            return a.notifyTime - b.notifyTime
+        });
+    } else {
         monthData[monthID] = [];
         monthData[monthID].push(event);
     }
@@ -153,9 +164,10 @@ function onSave() {
     // alert(monthID); OK
     if (dayData.hasOwnProperty(dayID)) {
         dayData[dayID].push(event);
-        dayData[dayID].sort(function(a, b){return a.notifyTime - b.notifyTime});
-    }
-    else {
+        dayData[dayID].sort(function (a, b) {
+            return a.notifyTime - b.notifyTime
+        });
+    } else {
         dayData[dayID] = [];
         dayData[dayID].push(event);
     }
@@ -164,9 +176,10 @@ function onSave() {
     // alert(monthID); OK
     if (tagData.hasOwnProperty(tagID)) {
         tagData[tagID].push(event);
-        tagData[tagID].sort(function(a, b){return a.notifyTime - b.notifyTime});
-    }
-    else {
+        tagData[tagID].sort(function (a, b) {
+            return a.notifyTime - b.notifyTime
+        });
+    } else {
         tagData[tagID] = [];
         tagData[tagID].push(event);
     }
@@ -191,11 +204,10 @@ function run() {
         }
         let now = new Date();
         nextEvent = eventFlow[0];
-        let timeUntilNotify = (nextEvent.getNotifyTime() - now); 
+        let timeUntilNotify = (nextEvent.getNotifyTime() - now);
         if (timeUntilNotify < 0) {
             eventFlow.shift();
-        }
-        else {
+        } else {
             //need delete old timeout
             clearTimeout(timeoutID);
             timeoutID = setTimeout(notifyEvent, timeUntilNotify);

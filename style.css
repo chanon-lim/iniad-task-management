@@ -166,7 +166,10 @@ body {
 
 .popup-box .popup-form .my-input-field {
     border-left: 1px solid;
+    display: block;
 }
+
+
 
 /* ---------- */
 /* Responsive */

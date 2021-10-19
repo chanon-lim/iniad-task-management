@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- jQuery -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
@@ -146,15 +147,15 @@
                     
                     <form class="popup-form">
                         <label for="id_title">Event title</label>
-                        <input class="my-input-field" id="id_title" type="text" style="display: block;">
+                        <input class="my-input-field" id="id_title" type="text">
                         <label for="id_content">Content</label>
-                        <input class="my-input-field" id="id_content" type="text" style="display: block;">
+                        <input class="my-input-field" id="id_content" type="text">
                         <label for="id_date">Date (eg: 2021/10/23)</label>
-                        <input class="my-input-field" id="id_date" type="date" style="display: block;">
+                        <input class="my-input-field" id="id_date" type="text" placeholder="YYYY/MM/DD">
                         <label for="id_time">Time (eg: 0816 for 08:16)</label>
-                        <input class="my-input-field" id="id_time" type="text" style="display: block;">
+                        <input class="my-input-field" id="id_time" type="text">
                         <label for="id_tag">Tag</label>
-                        <input class="my-input-field" id="id_tag" type="text" style="display: block;">
+                        <input class="my-input-field" id="id_tag" type="text">
                     </form>
                     <button type="button" onclick="onSave()">Save</button>
                     <button type="button" onclick="onClose()">Close</button>
