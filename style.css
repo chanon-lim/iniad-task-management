@@ -85,7 +85,7 @@ body {
 
 .dashboard-col .dashboard-content {
     padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 0;
     position: relative;
     background-color: #F1F6F9;
@@ -96,11 +96,76 @@ body {
     border-right: 0 !important;
 }
 
-.dashboard-col .new-event-btn {
+.new-event-btn {
     font-size: 14px;
     color: #fff;
     background-color: #206A5D;
     border-color: #206A5D;
+}
+
+.new-event-btn:hover {
+    color: #fff;
+    background-color: #2f9d8a;
+    border-color: #2f9d8a;
+}
+
+/* ----- */
+/* Popup */
+/* ----- */
+
+#mycreateEventBox {
+    display: none;
+}
+
+#mycreateEventBox.active {
+    display: block;
+}
+
+.popup-box {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+    min-width: 300px;
+    max-width: 400px;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: #000 0 2px 18px;
+}
+
+.popup-box .popup-header {
+    padding: 20px;
+    min-height: 70px;
+    background-color: #17194C;
+    color: #fff;
+    overflow: hidden;
+}
+
+.popup-box .popup-header h3 {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.popup-box .popup-header .fa-times {
+    position: absolute;
+    right: 25px;
+    top: 27px;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.popup-box .popup-form {
+    padding: 20px;
+}
+
+.popup-box .popup-form .my-input-field {
+    border-left: 1px solid;
 }
 
 /* ---------- */
@@ -212,4 +277,5 @@ body {
     /* ------- */
     /* Content */
     /* ------- */
+
 }

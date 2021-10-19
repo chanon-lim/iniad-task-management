@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,6 +17,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css"
         integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
+
+    <!-- Full Calendar -->
+    <link type="css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
 
     <!-- My CSS Styling Sheet -->
     <link rel="stylesheet" href="style.css">
@@ -99,7 +103,7 @@
                 <div class="col-lg-4 col-sm-12 dashboard-col">
                     <div class="dashboard-header">
                         <h2>Task</h2>
-                        <a href="" class="btn new-event-btn"><i class="fas fa-plus"></i> New Task</a>
+                        <a class="btn new-event-btn" onclick="openPopup()"><i class="fas fa-plus"></i> New Task</a>
                     </div>
                     <div class="dashboard-content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -131,14 +135,36 @@
                     </div>
                 </div>
             </div>
+            <!-- Popup Section -->
+            <div id="mycreateEventBox">
+                <div class="popup-box">
+                    <div class="popup-header">
+                        <h3>Create New Event</h3>
+                        <a onclick="onClose()"><i class="fas fa-times"></i></a>
+                    </div>
+                    
+                    
+                    <form class="popup-form">
+                        <label for="id_title">Event title</label>
+                        <input class="my-input-field" id="id_title" type="text" style="display: block;">
+                        <label for="id_content">Content</label>
+                        <input class="my-input-field" id="id_content" type="text" style="display: block;">
+                        <label for="id_date">Date (eg: 2021/10/23)</label>
+                        <input class="my-input-field" id="id_date" type="date" style="display: block;">
+                        <label for="id_time">Time (eg: 0816 for 08:16)</label>
+                        <input class="my-input-field" id="id_time" type="text" style="display: block;">
+                        <label for="id_tag">Tag</label>
+                        <input class="my-input-field" id="id_tag" type="text" style="display: block;">
+                    </form>
+                    <button type="button" onclick="onSave()">Save</button>
+                    <button type="button" onclick="onClose()">Close</button>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Content Section End -->
 
-    <!-- Popup Section -->
-    <div class="popup tasks">
-
-    </div>
+    
 
     <!-- JavaScript -->
     <script src="myscript.js"></script>
