@@ -102,11 +102,12 @@ function onClose() {
     }
 }
 
-/**Get the input data from user, return array in form [Title, content, date, time, tag]*/
+/**Get the input data from user, return array in form [Title, date, time, content, tag]*/
 function getInputData() {
     let inputField = document.getElementsByClassName("my-input-field");
     let result = [];
     for (let field of inputField) {
+        console.log('Type of data: ', typeof(field.value));
         result.push(field.value);
     }
     return result
@@ -118,7 +119,7 @@ function notifyEvent() {
     let message = nextEvent.getContent();
     var notification = new Notification(title, {
         body: message,
-        icon: "clock_icon.png"
+        icon: "static/images/clock_icon.png"
     });
     run();
 }
@@ -130,6 +131,7 @@ function createEventTitle(eventObj) {
     let content = eventObj.getContent();
     let deadline = eventObj.getNotifyTime();
     let div = document.createElement("div");
+    div.style = "background: yellow;";
     let heading = document.createElement("h4");
     let headtext = document.createTextNode(title);
     heading.appendChild(headtext);
@@ -138,11 +140,25 @@ function createEventTitle(eventObj) {
     eventFlowPane.appendChild(div);
 }
 
+/**This method update the Event flow pane  */
 function updateEventFlow() {
     let eventFlowPane = document.getElementById("event-flow");
-    let allEvent = document.getElementById("event-flow").childNodes;
-    for (let event of allEvent) {
-        eventFlowPane.removeChild(event);
+    let allEvent = eventFlowPane.childNodes;
+    let allEventNumber = allEvent.length;
+    console.log('Length of allEvent:', allEvent.length);
+    console.log(allEvent); //0 if the first time
+    // for (let event of allEvent) {
+    //     eventFlowPane.removeChild(event);
+    //     event.remove();
+    // }
+    if (allEventNumber === 0) {
+    }
+    else {
+    let firstEventTitle = eventFlowPane.firstElementChild;
+    while (firstEventTitle) {
+        firstEventTitle.remove();
+        firstEventTitle = eventFlowPane.firstElementChild;
+    }
     }
     for (let event of eventFlow) {
         createEventTitle(event);
@@ -154,34 +170,36 @@ function onSave() {
     let data = getInputData();
     // alert(data); //abc,abc,2021/10/23,0816,khan
     let title = data[0];
-    let content = data[1];
+    let content = data[3];
     let tag = data[4];
-    let datedata = data[2].split('/');
+    let datedata = data[1].split('/');
+    console.log('datedata: ', datedata);
+    console.log('type of datedata:', typeof(datedata));
     // alert(datedata); //2021,10,23
     let year = Number(datedata[0]);
     // alert(typeof(year)); //Number
     let month = Number(datedata[1]);
     let day = Number(datedata[2]);
-    let hour = Number(data[3].slice(0, 2));
-    let min = Number(data[3].slice(2, 4));
-    let eventdate = new Date(year, month - 1, day, hour, min);
+    console.log('Time: ', data[3]);
+    let hour = Number(data[2].slice(0, 2));
+    console.log('Hour', hour);
+    let min = Number(data[2].slice(3, 5));
+    console.log('Min: ', min);
+    let eventdate = new Date(year, month-1, day, hour, min);
     // alert(year, month, day, hour, min);
     let event = new CalendarEvent(title, content, tag, eventdate);
-
+    
     //now add to the data structure
     eventFlow.push(event);
-    eventFlow.sort(function (a, b) {
-        return a.notifyTime - b.notifyTime
-    });
+    eventFlow.sort(function(a, b){return a.notifyTime - b.notifyTime});
 
     let monthID = String(year) + "@" + String(month);
     // alert(monthID); OK
     if (monthData.hasOwnProperty(monthID)) {
         monthData[monthID].push(event);
-        monthData[monthID].sort(function (a, b) {
-            return a.notifyTime - b.notifyTime
-        });
-    } else {
+        monthData[monthID].sort(function(a, b){return a.notifyTime - b.notifyTime});
+    }
+    else {
         monthData[monthID] = [];
         monthData[monthID].push(event);
     }
@@ -190,10 +208,9 @@ function onSave() {
     // alert(monthID); OK
     if (dayData.hasOwnProperty(dayID)) {
         dayData[dayID].push(event);
-        dayData[dayID].sort(function (a, b) {
-            return a.notifyTime - b.notifyTime
-        });
-    } else {
+        dayData[dayID].sort(function(a, b){return a.notifyTime - b.notifyTime});
+    }
+    else {
         dayData[dayID] = [];
         dayData[dayID].push(event);
     }
@@ -202,10 +219,9 @@ function onSave() {
     // alert(monthID); OK
     if (tagData.hasOwnProperty(tagID)) {
         tagData[tagID].push(event);
-        tagData[tagID].sort(function (a, b) {
-            return a.notifyTime - b.notifyTime
-        });
-    } else {
+        tagData[tagID].sort(function(a, b){return a.notifyTime - b.notifyTime});
+    }
+    else {
         tagData[tagID] = [];
         tagData[tagID].push(event);
     }
@@ -217,31 +233,34 @@ function onSave() {
     // alert(now);
     // alert(nextEvent.getNotifyTime());
     // alert(timeUntilNotify);
-    console.log(eventFlow);
-    onClose();
+    console.log('eventFlow: ', eventFlow);
+    onClose(); //close the input box
     run();
 }
 
-/**The main process */
+/**The main process 
+ * will check the next event and set reminder
+*/
 function run() {
     while (true) {
         if (eventFlow.length === 0) {
+            updateEventFlow();
             break;
         }
         let now = new Date();
         nextEvent = eventFlow[0];
-        let timeUntilNotify = (nextEvent.getNotifyTime() - now);
-        if (timeUntilNotify < 0) {
+        let timeUntilNotify = (nextEvent.getNotifyTime() - now); 
+        if (timeUntilNotify < 0) { //if the next event is passed -> pop that and move to next one
             eventFlow.shift();
-        } else {
+        }
+        else {
             //need delete old timeout
             clearTimeout(timeoutID);
             timeoutID = setTimeout(notifyEvent, timeUntilNotify);
             // alert(timeUntilNotify);
-            updateEventFlow()
+            updateEventFlow();
             break;
         }
     }
 }
-
-run();
+//run();
