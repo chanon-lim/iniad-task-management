@@ -86,11 +86,25 @@ function createEventTitle(eventObj) {
     eventFlowPane.appendChild(div);
 }
 
+/**This method update the Event flow pane  */
 function updateEventFlow() {
     let eventFlowPane = document.getElementById("event-flow");
-    let allEvent = document.getElementById("event-flow").childNodes;
-    for (let event of allEvent) {
-        eventFlowPane.removeChild(event);
+    let allEvent = eventFlowPane.childNodes;
+    let allEventNumber = allEvent.length;
+    console.log('Length of allEvent:', allEvent.length);
+    console.log(allEvent); //0 if the first time
+    // for (let event of allEvent) {
+    //     eventFlowPane.removeChild(event);
+    //     event.remove();
+    // }
+    if (allEventNumber === 0) {
+    }
+    else {
+    let firstEventTitle = eventFlowPane.firstElementChild;
+    while (firstEventTitle) {
+        firstEventTitle.remove();
+        firstEventTitle = eventFlowPane.firstElementChild;
+    }
     }
     for (let event of eventFlow) {
         createEventTitle(event);
@@ -160,21 +174,24 @@ function onSave() {
     // alert(now);
     // alert(nextEvent.getNotifyTime());
     // alert(timeUntilNotify);
-    console.log(eventFlow);
-    onClose();
+    console.log('eventFlow: ', eventFlow);
+    onClose(); //close the input box
     run();
 }
 
-/**The main process */
+/**The main process 
+ * will check the next event and set reminder
+*/
 function run() {
     while (true) {
         if (eventFlow.length === 0) {
+            updateEventFlow();
             break;
         }
         let now = new Date();
         nextEvent = eventFlow[0];
         let timeUntilNotify = (nextEvent.getNotifyTime() - now); 
-        if (timeUntilNotify < 0) {
+        if (timeUntilNotify < 0) { //if the next event is passed -> pop that and move to next one
             eventFlow.shift();
         }
         else {
@@ -182,9 +199,9 @@ function run() {
             clearTimeout(timeoutID);
             timeoutID = setTimeout(notifyEvent, timeUntilNotify);
             // alert(timeUntilNotify);
-            updateEventFlow()
+            updateEventFlow();
             break;
         }
     }
 }
-run();
+//run();
