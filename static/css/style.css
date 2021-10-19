@@ -162,14 +162,41 @@ body {
 
 .popup-box .popup-form {
     padding: 20px;
+    padding-top: 0px;
+}
+
+.popup-box .popup-form label {
+    font-size: 16px;
+    padding-top: 10px;
 }
 
 .popup-box .popup-form .my-input-field {
-    border-left: 1px solid;
+    font-size: 14px;
+    border: 1px solid;
     display: block;
+    width: 100%;
 }
 
+.cancel-btn {
+    font-size: 14px;
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #e7eaee;
+}
 
+.cancel-btn:hover {
+    background-color: #e7eaee;
+}
+
+.popup-box .wrapper {
+    width:100%;
+    text-align: center;
+}
+
+.popup-box .wrapper .btn {
+    display: inline-block;
+    margin: 0 5px 10px;
+} 
 
 /* ---------- */
 /* Responsive */

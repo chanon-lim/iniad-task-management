@@ -22,6 +22,11 @@ $(function () {
     });
 });
 
+$('#id_time').timepicki({
+    show_meridian: false,
+    start_time: ["00", "00"]
+}); 
+
 // Calendar
 class CalendarEvent {
     constructor(title, content, tag, notifyTime) {
