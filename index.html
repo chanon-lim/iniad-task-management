@@ -48,9 +48,9 @@
         </div>
 
         <div class="midText">
-            <p style="font-size: 40px">Find a study buddy!</p>
+            <p style="font-size: 40px; color:darkturquoise; font-family:Verdana, Geneva, Tahoma, sans-serif">Find a study buddy!</p>
             <div class="custom-select">
-                <p style="font-size: 25px"> Input the time you are available. </p>
+                <p style="font-size: 25px"> Input the time(s) you are available. </p>
                 <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
                   <option value="0">Select days:</option>
                   <option value="1">Monday</option>
@@ -90,7 +90,29 @@
                   <option value="8">Catherine</option>
                 </select>
               </div>
-              <p style="font-size: 20px"> Want to study now? On-the-spot search available too. </p>
+              <p style="font-size: 25px">Send request(s) to friends to plan a study session.</p>
+              <div class="requests">
+              <button type="button" class="openForm" onclick="openForm()">Send Request</button>
+
+              <!--make a popup form for sending requests to users to study together-->
+              <div class="form-popup" id="requestForm">
+                <form  class="form-container">
+                  <h1>Send a request.</h1>
+              
+                  <label for="name"><b>User Name</b></label>
+                  <input type="text" placeholder="Enter Name" name="name" required>
+              
+                  <label for="friend"><b>Study Buddy</b></label>
+                  <input type="text" placeholder="Enter the name of your friend" name="friend" required>
+              
+                  <button type="submit" class="sendRequest">Send Request</button>
+                  <button type="button" class="cancel" onclick="closeForm()">Close</button>
+                </form>
+              </div>
+              <!--end popup form-->
+              <button type="button" class="yourRequests">Your Requests</button>
+            </div>
+              <p style="font-size: 20px; color:darkcyan"> Want to study now? Look who's available above. </p>
             
 
         </div>

@@ -8,16 +8,6 @@
     padding:16px
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-}
-
-.sticky + .content {
-    padding-top: 102px;
-}
-
 #activeUsers{
     text-align:center;
     color:darkturquoise;
@@ -45,17 +35,70 @@
     text-align:center;
     color:darkturquoise;
     font-weight: bold;
+    font-family:Arial;
 }
 
 .custom-select{
     text-align:center;
     position: center;
-    font-family: Arial;
+    
+}
+
+/*Modifying the buttons*/
+.openForm, .yourRequests{
+    
+    background-color: darkturquoise;
+    font-weight:bolder;
+    color:white; 
+    border: 6px solid transparent;
+    font-size:15px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: relative;
+    bottom: 0;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+.form-container {
+    width:300px;
+    display:inline-block;
+    padding: 10px 50px 10px 50px;
+    background-color: lightcyan;
+    position:relative;
+
+    color:deepskyblue;
+}  
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: white;
+}
+
+.sendRequest:hover, .cancel:hover,.yourRequests:hover,.openForm:hover {
+    opacity: 0.8;
+  }
+
+/*Modifying buttons in the form*/
+.sendRequest, .cancel{
+    background-color: deepskyblue;
+    font-weight:bolder;
+    color:white; 
+    border: 6px solid transparent;
+    font-size:15px;
+
 }
 
 
+
 .footer {
-    position: fixed;
+    position:relative;
     left: 0;
     bottom: 0;
     width: 100%;
