@@ -171,7 +171,7 @@ function createEventTitle(eventObj) {
 
     // Create deadline for event card
     let deadline = document.createElement("p");
-    let deadlineText = document.createTextNode(deadline);
+    let deadlineText = document.createTextNode(String(deadline));
     deadline.appendChild(deadlineText);
     
     //Add style to event card
