@@ -156,19 +156,32 @@ function createEventTitle(eventObj) {
     let content = eventObj.getContent();
     let deadline = eventObj.getNotifyTime();
 
-    let divCard = document.createElement("div");
-    let divCardBody = document.createElement("div");
-    let eventTitleBannerColor = setEventTitleBannerColor(eventObj);
-    let heading = document.createElement("h5");
-    let headtext = document.createTextNode(title);
     let eventFlowPane = document.getElementById("event-flow");
 
+    let divCard = document.createElement("div");
+    // divCardBody contains Title, due, ...
+    let divCardBody = document.createElement("div");
+    let eventTitleBannerColor = setEventTitleBannerColor(eventObj);
+
+    // Create heading for event card
+    let heading = document.createElement("h5");
+    let headtext = document.createTextNode(title);
+    heading.classList.add("card-title");
+    heading.appendChild(headtext);
+
+    // Create deadline for event card
+    let deadline = document.createElement("p");
+    let deadlineText = document.createTextNode(deadline);
+    deadline.appendChild(deadlineText);
+    
+    //Add style to event card
     divCard.classList.add("card", eventTitleBannerColor);
     divCard.appendChild(divCardBody);
     divCardBody.classList.add("card-body");
-    heading.classList.add("card-title");
-    heading.appendChild(headtext);
+   
     divCardBody.appendChild(heading);
+    divCardBody.appendChild(deadline);
+
 
     eventFlowPane.appendChild(divCard);
 }
