@@ -1,6 +1,7 @@
 .header{
-    padding:10px 16px;
-    background-color: lightcyan;
+    padding:10px;
+    background-color: white;
+    box-shadow: 0px 6px 3px rgb(221, 220, 220);
 }
 
 /*Page Content*/
@@ -8,12 +9,27 @@
     padding:16px
 }
 
+.bar{
+    width:auto;
+    padding: 16px;
+    margin:16px;
+    float:right;
+    background-color:lightcyan;
+    opacity:0.7;
+    box-shadow: 0px 4px 2px rgb(221, 220, 220);
+}
+
+.video , .chat, .you, .addFriend{
+    padding: 30px 70px 30px 30px; 
+  }
+
 #activeUsers{
     text-align:center;
     color:darkturquoise;
     font-weight: bolder;
     margin:auto;
     padding:0px 16px 16px ;
+    text-decoration: underline;
 
 
 }
@@ -36,6 +52,7 @@
     color:darkturquoise;
     font-weight: bold;
     font-family:Arial;
+    padding:50px;
 }
 
 .custom-select{
