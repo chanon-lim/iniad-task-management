@@ -170,13 +170,14 @@ function createEventTitle(eventObj) {
     heading.appendChild(headtext);
 
     // Create deadline for event card
-    let deadlineSection = document.createElement("p");
+    let deadlineSection = document.createElement("h6");
     let deadlineMonth = deadline.getMonth() + 1;
     let deadlineDate = deadline.getDate();
     let deadlineHours = deadline.getHours();
     let deadlineMins = deadline.getMinutes();
     let deadlineDisplay = deadlineMonth + "/" + deadlineDate + " " + deadlineHours + ":" + deadlineMins;
-    let deadlineText = document.createTextNode("Deadline: " + deadlineDisplay);
+    let deadlineText = document.createTextNode(deadlineDisplay);
+    deadlineSection.classList.add("card-subtitle");
     deadlineSection.appendChild(deadlineText);
     
     //Add style to event card
