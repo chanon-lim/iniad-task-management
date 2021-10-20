@@ -206,15 +206,16 @@ function updateEventFlow() {
         //do nothing
     }
     else {
-    let firstEventTitle = eventFlowPane.firstElementChild;
-    while (firstEventTitle) {
-        firstEventTitle.remove();
-        firstEventTitle = eventFlowPane.firstElementChild;
+        let firstEventTitle = eventFlowPane.firstElementChild;
+        while (firstEventTitle) {
+            firstEventTitle.remove();
+            firstEventTitle = eventFlowPane.firstElementChild;
     }
     }
     for (let event of eventFlow) {
         createEventTitle(event);
     }
+    // when there is no upcoming event, display "there is no upcoming event"
     if (eventFlow.length === 0) {
         displayNoUpcomingEvent(eventFlowPane);
     }
@@ -236,6 +237,7 @@ function onSave() {
     let month = Number(datedata[1]);
     let day = Number(datedata[2]);
     console.log('Time: ', data[3]);
+    // The time format in form 23:15 -> need to slice the String
     let hour = Number(data[2].slice(0, 2));
     console.log('Hour', hour);
     let min = Number(data[2].slice(3, 5));
