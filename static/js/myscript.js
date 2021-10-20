@@ -170,9 +170,14 @@ function createEventTitle(eventObj) {
     heading.appendChild(headtext);
 
     // Create deadline for event card
-    let deadline = document.createElement("p");
-    let deadlineText = document.createTextNode(String(deadline));
-    deadline.appendChild(deadlineText);
+    let deadlineSection = document.createElement("p");
+    let deadlineMonth = deadline.getMonth() + 1;
+    let deadlineDate = deadline.getDate();
+    let deadlineHours = deadline.getHours();
+    let deadlineMins = deadline.getMinutes();
+    let deadlineDisplay = deadlineMonth + "/" + deadlineDate + " " + deadlineHours + ":" + deadlineMins;
+    let deadlineText = document.createTextNode("Deadline: " + deadlineDisplay);
+    deadlineSection.appendChild(deadlineText);
     
     //Add style to event card
     divCard.classList.add("card", eventTitleBannerColor);
@@ -180,7 +185,7 @@ function createEventTitle(eventObj) {
     divCardBody.classList.add("card-body");
    
     divCardBody.appendChild(heading);
-    divCardBody.appendChild(deadline);
+    divCardBody.appendChild(deadlineSection);
 
 
     eventFlowPane.appendChild(divCard);
@@ -219,10 +224,10 @@ function updateEventFlow() {
         //do nothing
     }
     else {
-        let firstEventTitle = eventFlowPane.firstElementChild;
-        while (firstEventTitle) {
-            firstEventTitle.remove();
-            firstEventTitle = eventFlowPane.firstElementChild;
+    let firstEventTitle = eventFlowPane.firstElementChild;
+    while (firstEventTitle) {
+        firstEventTitle.remove();
+        firstEventTitle = eventFlowPane.firstElementChild;
     }
     }
     for (let event of eventFlow) {
