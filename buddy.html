@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Find a Study Buddy!</title>
+        <link rel="stylesheet" type="text/css" href="page.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+        <script src="page.js"></script>
+    </head>
+
+    <body>
+
+        <div class="header" id="pageHeader">
+            <h2 id="activeUsers">AVAILABLE NOW</h2>
+            <span class="icon">
+            <i class="bi bi-person-circle"> Micky </i>
+            </span>
+            <span class="icon">
+            <i class="bi bi-person-circle"> Holly </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> Dave </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> John </i>
+            </span><span class="icon">
+                <i class="bi bi-person-circle"> Lin </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> Mike </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> Phat</i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> Tung </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> Sarah </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle" > Julie </i>
+            </span>
+            <span class="icon">
+                <i class="bi bi-person-circle"> Htet </i>
+            </span>
+           
+        </div>
+
+        <div class="bar">
+            <span class="you">
+            <i class="bi bi-person-circle"></i>
+            </span>
+            <span class="addFriend">
+            <i class="bi bi-person-plus"></i>
+            </span>
+            <span class="video">
+            <i class="bi bi-camera-video"></i>
+            </span>
+            <span class="chat">
+            <i class="bi bi-chat-left-text"></i>
+            </span>
+
+
+        </div>
+
+        <div class="midText">
+            <p style="font-size: 40px; color:darkturquoise; font-family:Verdana, Geneva, Tahoma, sans-serif">Find a study buddy!</p>
+            <div class="custom-select">
+                <p style="font-size: 25px"> Input the time(s) you are available. </p>
+                <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
+                  <option value="0">Select days:</option>
+                  <option value="1">Monday</option>
+                  <option value="2">Tuesday</option>
+                  <option value="3">Wednesday</option>
+                  <option value="4">Thursday</option>
+                  <option value="5">Friday</option>
+                  <option value="6">Saturday</option>
+                  <option value="7">Sunday</option>
+                </select>
+                <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
+                    <option value="0">Select time:</option>
+                    <option value="1">6:30-7:30</option>
+                    <option value="2">7:30-8:30</option>
+                    <option value="3">8:30:9:30</option>
+                    <option value="4">9:30-10:30</option>
+                    <option value="5">10:30-11:30</option>
+                    <option value="6">11:30-12:30</option>
+                    <option value="7">12:30-13:30</option>
+                    <option value="8">13:30-14:30</option>
+                    <option value="9">14:30-15:30</option>
+                    <option value="10">15:30-16:30</option>
+                    <option value="11">16:30-17:30</option>
+                  </select>
+              </div>
+              <div class="custom-select">
+                <p style="font-size: 25px"> Check when others are available. </p>
+                <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
+                  <option value="0">Select users:</option>
+                  <option value="1">Lin</option>
+                  <option value="2">Tung</option>
+                  <option value="3">Mike</option>
+                  <option value="4">Phat</option>
+                  <option value="5">Holly</option>
+                  <option value="6">Sam</option>
+                  <option value="7">Arial</option>
+                  <option value="8">Catherine</option>
+                </select>
+              </div>
+              <p style="font-size: 25px">Send request(s) to friends to plan a study session.</p>
+              <div class="requests">
+              <button type="button" class="openForm" onclick="openForm()">Send Request</button>
+
+              <!--make a popup form for sending requests to users to study together-->
+              <div class="form-popup" id="requestForm">
+                <form  class="form-container">
+                  <h1>Send a request.</h1>
+              
+                  <label for="name"><b>User Name</b></label>
+                  <input type="text" placeholder="Enter Name" name="name" required>
+              
+                  <label for="friend"><b>Study Buddy</b></label>
+                  <input type="text" placeholder="Enter the name of your friend" name="friend" required>
+              
+                  <button type="submit" class="sendRequest">Send Request</button>
+                  <button type="button" class="cancel" onclick="closeForm()">Close</button>
+                </form>
+              </div>
+              <!--end popup form-->
+              <button type="button" class="yourRequests">Your Requests</button>
+            </div>
+              <p style="font-size: 20px; color:darkcyan"> Want to study now? Look who's available above. </p>
+            
+
+        </div>
+
+        <div class="footer">
+            <span class="taskSchedule">
+               Task Schedule
+            </span>
+          <span class="homePage">
+              Home Page
+          </span>
+          <span class="forum">
+            Forum
+       </span>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,148 @@
+.header{
+    padding:10px;
+    background-color: white;
+    box-shadow: 0px 6px 3px rgb(221, 220, 220);
+}
+
+/*Page Content*/
+.content{
+    padding:16px
+}
+
+.bar{
+    width:auto;
+    padding: 16px;
+    margin:16px;
+    float:right;
+    background-color:lightcyan;
+    opacity:0.7;
+    box-shadow: 0px 4px 2px rgb(221, 220, 220);
+}
+
+.video , .chat, .you, .addFriend{
+    padding: 30px 70px 30px 30px; 
+  }
+
+#activeUsers{
+    text-align:center;
+    color:darkturquoise;
+    font-weight: bolder;
+    margin:auto;
+    padding:0px 16px 16px ;
+    text-decoration: underline;
+
+
+}
+
+.icon {
+    padding: 25px;
+    cursor: pointer;
+}
+
+/*increase the size of icon*/
+.bi{
+    font-size:18px;
+    color:darkslateblue;
+    font-weight:bold;
+    
+}
+
+.midText{
+    text-align:center;
+    color:darkturquoise;
+    font-weight: bold;
+    font-family:Arial;
+    padding:50px;
+}
+
+.custom-select{
+    text-align:center;
+    position: center;
+    
+}
+
+/*Modifying the buttons*/
+.openForm, .yourRequests{
+    
+    background-color: darkturquoise;
+    font-weight:bolder;
+    color:white; 
+    border: 6px solid transparent;
+    font-size:15px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: relative;
+    bottom: 0;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+.form-container {
+    width:300px;
+    display:inline-block;
+    padding: 10px 50px 10px 50px;
+    background-color: lightcyan;
+    position:relative;
+
+    color:deepskyblue;
+}  
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: white;
+}
+
+.sendRequest:hover, .cancel:hover,.yourRequests:hover,.openForm:hover {
+    opacity: 0.8;
+  }
+
+/*Modifying buttons in the form*/
+.sendRequest, .cancel{
+    background-color: deepskyblue;
+    font-weight:bolder;
+    color:white; 
+    border: 6px solid transparent;
+    font-size:15px;
+
+}
+
+
+
+.footer {
+    position:relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightcyan;
+    color:darkturquoise;
+    font-weight: bolder;
+    font-size: 20px;
+    padding:20px 25px 25px;
+    
+
+  }
+
+  .forum {
+    padding:0px 150px 0;
+    text-decoration-line:underline;
+    cursor: pointer;
+  }
+  
+
+  .taskSchedule{
+    padding:0px 150px;
+    text-decoration-line:underline;
+    cursor: pointer;
+  }
+
+  .homePage{
+    padding:0px 150px;
+    text-decoration-line:underline;
+    cursor: pointer;
+  }
