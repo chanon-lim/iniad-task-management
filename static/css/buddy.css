@@ -114,35 +114,3 @@
 
 
 
-.footer {
-    position:relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:lightcyan;
-    color:darkturquoise;
-    font-weight: bolder;
-    font-size: 20px;
-    padding:20px 25px 25px;
-    
-
-  }
-
-  .forum {
-    padding:0px 150px 0;
-    text-decoration-line:underline;
-    cursor: pointer;
-  }
-  
-
-  .taskSchedule{
-    padding:0px 150px;
-    text-decoration-line:underline;
-    cursor: pointer;
-  }
-
-  .homePage{
-    padding:0px 150px;
-    text-decoration-line:underline;
-    cursor: pointer;
-  }
