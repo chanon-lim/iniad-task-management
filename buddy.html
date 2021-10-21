@@ -36,12 +36,6 @@
                 <i class="bi bi-person-circle"> Tung </i>
             </span>
             <span class="icon">
-                <i class="bi bi-person-circle"> Sarah </i>
-            </span>
-            <span class="icon">
-                <i class="bi bi-person-circle" > Julie </i>
-            </span>
-            <span class="icon">
                 <i class="bi bi-person-circle"> Htet </i>
             </span>
            
@@ -61,14 +55,37 @@
             <i class="bi bi-chat-left-text"></i>
             </span>
 
-
+            <!-- Sidebar Section -->
+            <div class="sidebar">
+                <div class="logo-details">
+                    <a href="#">
+                        <!-- <i class="far fa-question-circle logo-icon"></i> -->
+                        <span class="logo-name">Website Logo</span>
+                    </a>
+                </div>
+                <a href="#" class="links">
+                    <i class="fas fa-tasks"></i>
+                    <span title="Task Dashboard" class="links-name">Task Dashboard</span>
+                </a>
+                <a href="#" class="links">
+                    <i class="fas fa-comments"></i>
+                    <span title="Forum" class="links-name">Forum</span>
+                </a>
+                <a href="#" class="links">
+                    <i class="fas fa-users"></i>
+                    <span title="Study Buddy" class="links-name">Study Buddy</span>
+                </a>
+            </div>
+            <!-- Sidebar Section End -->
         </div>
 
+        <!--main functions of the page shown in the middle-->
         <div class="midText">
             <p style="font-size: 40px; color:darkturquoise; font-family:Verdana, Geneva, Tahoma, sans-serif">Find a study buddy!</p>
             <div class="custom-select">
+                <!--Select days button-->
                 <p style="font-size: 25px"> Input the time(s) you are available. </p>
-                <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
+                <select class="days">
                   <option value="0">Select days:</option>
                   <option value="1">Monday</option>
                   <option value="2">Tuesday</option>
@@ -78,7 +95,10 @@
                   <option value="6">Saturday</option>
                   <option value="7">Sunday</option>
                 </select>
-                <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
+                <!--Select days end-->
+
+                <!--Select time button-->
+                <select class="time">
                     <option value="0">Select time:</option>
                     <option value="1">6:30-7:30</option>
                     <option value="2">7:30-8:30</option>
@@ -92,10 +112,13 @@
                     <option value="10">15:30-16:30</option>
                     <option value="11">16:30-17:30</option>
                   </select>
+                <!--Select time end-->
               </div>
+
+              <!--checking others-->
               <div class="custom-select">
                 <p style="font-size: 25px"> Check when others are available. </p>
-                <select style="background-color: darkturquoise; font-weight:bolder;color:white; border: 6px solid transparent; font-size:15px;">
+                <select class="others">
                   <option value="0">Select users:</option>
                   <option value="1">Lin</option>
                   <option value="2">Tung</option>
@@ -107,6 +130,8 @@
                   <option value="8">Catherine</option>
                 </select>
               </div>
+              <!--check others end-->
+
               <p style="font-size: 25px">Send request(s) to friends to plan a study session.</p>
               <div class="requests">
               <button type="button" class="openForm" onclick="openForm()">Send Request</button>
@@ -130,6 +155,7 @@
               <button type="button" class="yourRequests">Your Requests</button>
             </div>
               <p style="font-size: 20px; color:darkcyan"> Want to study now? Look who's available above. </p>
+            <!--main function end-->
             
 
         </div>
