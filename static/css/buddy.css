@@ -1,14 +1,89 @@
 .header{
-    padding:10px;
-    background-color: white;
-    box-shadow: 0px 6px 3px rgb(221, 220, 220);
+    padding: 0;
+    margin-left: 250px;
+    height: 120px;
+    width:100%;
+    transition: 0.5s;
+    box-sizing: border-box;
+    box-shadow:0px 4px 2px rgb(221, 220, 220);
+
 }
 
-/*Page Content*/
-.content{
-    padding:16px
+/*AVAILABLE NOW*/
+#activeUsers{
+    text-align:left;
+    color:darkturquoise;
+    font-weight: bolder;
+    margin:auto;
+    padding:16px 16px 34px 16px;
+    text-decoration: underline;
+
 }
 
+
+.icon {
+    padding:25px;
+    cursor: pointer;
+}
+
+/*increase the size of icon*/
+.bi{
+    font-size:18px;
+    color:darkslateblue;
+    font-weight:bold;
+
+    
+}
+/* ------- */
+/* Sidebar */
+/* ------- */
+
+.sidebar {
+    z-index: 1;
+    background: #17194C;
+    padding-top: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    transition: all 0.5s ease;
+    user-select: none;
+    overflow-y: auto;
+}
+
+.sidebar .logo-details {
+    padding-left: 35px;
+    padding-bottom: 30px;
+}
+
+.sidebar .logo-details a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    padding-right: 10px;
+}
+
+.sidebar .links{
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.sidebar .links:hover {
+    background: #fff;
+    color: #17194C;
+}
+
+.sidebar .links i {
+    padding-right: 10px;
+}
+
+/*Icon bar which shows the functions the user can apply*/
 .bar{
     width:auto;
     padding: 16px;
@@ -21,54 +96,53 @@
 
 .video , .chat, .you, .addFriend{
     padding: 30px 70px 30px 30px; 
-}
+  }
 
-#activeUsers{
-    text-align:center;
-    color:darkturquoise;
-    font-weight: bolder;
-    margin:auto;
-    padding:0px 16px 16px ;
-    text-decoration: underline;
+/*Icon bar end*/
 
+/*main function section start*/
 
-}
-
-.icon {
-    padding: 25px;
-    cursor: pointer;
-}
-
-/*increase the size of icon*/
-.bi{
-    font-size:18px;
-    color:darkslateblue;
-    font-weight:bold;
-}
-
+/*Modify the texts above each buttons - start*/
 .midText{
     text-align:center;
     color:darkturquoise;
     font-weight: bold;
     font-family:Arial;
     padding:50px;
+    margin:0px 0px 0px 200px;
 }
 
+/*Modify the texts above each buttons -end*/
 .custom-select{
     text-align:center;
     position: center;
     
 }
 
-/*Modifying the buttons*/
-.openForm, .yourRequests{
-    
-    background-color: darkturquoise;
+/*Modifying the buttons - start*/
+.days, .time, .others,.openForm,.yourRequests{
+    background-color: rgb(99, 150, 151); 
+    font-weight:bolder;color:white; 
+    border: 6px solid transparent;
+   font-size:15px;
+}
+
+.sendRequest:hover, .cancel:hover,.yourRequests:hover,.openForm:hover,.days:hover, .time:hover,.others:hover {
+    opacity: 0.8;
+    cursor:pointer;
+  }
+
+/*Modifying buttons in the form*/
+.sendRequest, .cancel{
+    background-color: deepskyblue;
     font-weight:bolder;
     color:white; 
     border: 6px solid transparent;
     font-size:15px;
+
 }
+
+/*Modifying the buttons - end*/
 
 /* The popup form - hidden by default */
 .form-popup {
@@ -97,51 +171,8 @@
     background: white;
 }
 
-.sendRequest:hover, .cancel:hover,.yourRequests:hover,.openForm:hover {
-    opacity: 0.8;
-  }
 
-/*Modifying buttons in the form*/
-.sendRequest, .cancel{
-    background-color: deepskyblue;
-    font-weight:bolder;
-    color:white; 
-    border: 6px solid transparent;
-    font-size:15px;
-
-}
+/*main function section end*/
 
 
 
-.footer {
-    position:relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:lightcyan;
-    color:darkturquoise;
-    font-weight: bolder;
-    font-size: 20px;
-    padding:20px 25px 25px;
-    
-
-  }
-
-  .forum {
-    padding:0px 150px 0;
-    text-decoration-line:underline;
-    cursor: pointer;
-  }
-  
-
-  .taskSchedule{
-    padding:0px 150px;
-    text-decoration-line:underline;
-    cursor: pointer;
-  }
-
-  .homePage{
-    padding:0px 150px;
-    text-decoration-line:underline;
-    cursor: pointer;
-  }
