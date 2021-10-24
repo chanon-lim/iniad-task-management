@@ -1,10 +1,17 @@
+// Sidebar to navbar (Responsive)
+let btn = document.querySelector("#collapse-btn");
+let navbar = document.querySelector(".mobile-nav");
+let content = document.querySelector(".content");
 
+btn.onclick = function () {
+  navbar.classList.toggle("active");
+  content.classList.toggle("active");
+}
 
 function openForm(){
-  document.getElementById('requestForm').style.display="block";
+  document.getElementById("requestFormBox").classList.add("active");
 }
 
 function closeForm(){
-  document.getElementById('requestForm').style.display="none";
-
+  document.getElementById("requestFormBox").classList.remove("active");
 }

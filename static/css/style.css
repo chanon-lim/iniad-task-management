@@ -72,6 +72,14 @@ a {
     box-sizing: border-box;
 }
 
+.content .container-fluid {
+    padding: 0;
+}
+
+.content .container-fluid .row {
+    margin: auto;
+}
+
 .dashboard-col {
     padding: 0;
 }
@@ -291,6 +299,119 @@ a {
     display: inline-block;
     margin: 0 5px 10px;
 } 
+
+/* ----------------------------------------------------------------------------------- */
+
+/* ---------- */
+/* Buddy Page */
+/* ---------- */
+
+/* ------ */
+/* Header */
+/* ------ */
+
+.buddy-header {
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgba(0,0,0,.04);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.buddy-header h2 {
+    text-align: center;
+    color: #4B4C74;
+    font-weight: 700;
+    margin: auto;
+    padding: 20px 16px 16px 0;
+}
+
+.buddy-header .header-icon {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.buddy-header .header-icon .person-icon{
+    white-space: nowrap;
+    padding: 0 5px;
+    color: #54557B;
+}
+
+.buddy-header .header-icon .person-icon i{
+    padding-right: 5px;
+}
+
+.function-bar {
+    width: auto;
+    padding: 16px;
+    margin: 16px;
+    float: right;
+    background-color: #F1F6F9;
+    opacity: 0.7;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.function-bar i {
+    padding-left: 30px;
+    padding-right: 70px;
+    cursor: pointer;
+}
+
+/* ------- */
+/* Content */
+/* ------- */
+
+.buddy-content {
+    text-align: center;
+    color: #17194C;
+    padding: 100px 20px 50px;
+}
+
+.buddy-content h2 {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.buddy-content h5 {
+    color: #4B4C74
+}
+
+.buddy-content .buddy-select {
+    background-color: #babace; 
+    color: #fff;
+    padding: 5px;
+    border: 0; 
+    border-radius: 0.25rem; 
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.buddy-content .buddy-select:hover {
+    background-color: #4B4C74; 
+}
+
+#requestFormBox {
+    display: none;
+}
+
+#requestFormBox.active {
+    display: block;
+}
+
+/* ------ */
+/* Footer */
+/* ------ */
+
+.buddy-content .footer-text {
+    margin-top: 75px;
+    font-weight: 300;
+    color: #babace;
+}
+
+/* ----------------------------------------------------------------------------------- */
 
 /* ---------- */
 /* Responsive */
