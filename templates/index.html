@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_script %}
+    <!-- jQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- FullCalendar -->
+    <link rel="stylesheet" href="{% static 'css/fullcalendar.min.css' %}">
+    <script src="{% static 'js/fullcalendar.min.js' %}"></script>
+    <!-- Timepicki -->
+    <script src="{% static 'js/timepicki.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/timepicki.css' %}">
+{% endblock head_script%}
+
+{% block stylesheet %}
+    <!-- My CSS Styling Sheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock stylesheet%}
+
+
+<!-- Content Section -->
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 col-sm-12 dashboard-col">
+        <div class="dashboard-header">
+            <h2>Today</h2>
+            <h4 class="today-date"></h4>
+        </div>
+        <div class="dashboard-content">
+            <div id="calendar"></div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12 dashboard-col">
+        <div class="dashboard-header">
+            <h2>Task</h2>
+            <a class="btn new-event-btn" onclick="openPopup()"><i class="fas fa-plus"></i> New Task</a>
+        </div>
+        <div class="dashboard-content" id="event-flow">
+            <div class="no-task">
+                <i class="fas fa-tasks"></i>
+                <p>There is no upcoming event!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12 dashboard-col no-border-right">
+        <div class="dashboard-header">
+            <h2>Exams</h2>
+        </div>
+        <div class="dashboard-content no-border-right">
+        </div>
+    </div>
+</div>
+<!-- Popup Section -->
+<div id="mycreateEventBox">
+    <div class="popup-box">
+        <div class="popup-header">
+            <h3>Create New Event</h3>
+            <a onclick="onClose()"><i class="fas fa-times"></i></a>
+        </div>
+    
+        <form class="popup-form">
+            <label for="id_title">Title</label>
+            <input class="my-input-field" id="id_title" type="text">
+            <label for="id_date">Date</label>
+            <input class="my-input-field" id="id_date" type="text" placeholder="YYYY/MM/DD">
+            <label for="id_time">Time</label>
+            <input class="my-input-field" id="id_time" type="text" placeholder="23:59">
+            <label for="id_content">Content</label>
+            <textarea class="my-input-field" id="id_content" rows="4" cols="30"></textarea>
+            <label for="id_tag">Tag</label>
+            <input class="my-input-field" id="id_tag" type="text">
+        </form>
+        <div class="wrapper">
+            <button type="button" class="btn cancel-btn" onclick="onClose()">Cancel</button>
+            <button type="button" class="btn new-event-btn" onclick="onSave()">Save</button>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+<!-- Content Section End -->
+
+    
+{% block footer_script %}
+    <!-- JavaScript -->
+    <script src="{% static 'js/tasks.js' %}"></script>
+{% endblock footer_script %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Find a Study Buddy!{% endblock title %}
+
+{% block stylesheet %}
+    <!-- My CSS Styling Sheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock stylesheet%}
+
+
+<!-- Content Section -->
+{% block content %}
+<div class="buddy-header">
+    <h2>AVAILABLE NOW</h2>
+    <div class="header-icon">
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Micky</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Holly</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Dave</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>John</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Lin</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Mike</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Phat</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Tung</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Sarah</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Julie</a>
+        <a href="#" class="person-icon"><i class="far fa-user-circle"></i>Htet</a>
+    </div>
+</div>
+
+<div class="function-bar">
+    <i class="far fa-user-circle"></i>
+    <i class="far fa-user-plus"></i>
+    <i class="far fa-video"></i>
+    <i class="far fa-comment-lines"></i>
+</div>
+
+<div class="buddy-content">
+    <h2>Find a study buddy!</h2>
+    <div class="custom-select">
+        <h5>Input the time(s) you are available.</h5>
+        <select class="buddy-select">
+            <option>Select days:</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+            <option value="7">Sunday</option>
+        </select>
+        <select class="buddy-select">
+            <option>Select time:</option>
+            <option value="1">6:30-7:30</option>
+            <option value="2">7:30-8:30</option>
+            <option value="3">8:30:9:30</option>
+            <option value="4">9:30-10:30</option>
+            <option value="5">10:30-11:30</option>
+            <option value="6">11:30-12:30</option>
+            <option value="7">12:30-13:30</option>
+            <option value="8">13:30-14:30</option>
+            <option value="9">14:30-15:30</option>
+            <option value="10">15:30-16:30</option>
+            <option value="11">16:30-17:30</option>
+        </select>
+    </div>
+    <div class="custom-select">
+        <h5>Check when others are available.</h5>
+        <select class="buddy-select">
+            <option value="0">Select users:</option>
+            <option value="1">Lin</option>
+            <option value="2">Tung</option>
+            <option value="3">Mike</option>
+            <option value="4">Phat</option>
+            <option value="5">Holly</option>
+            <option value="6">Sam</option>
+            <option value="7">Arial</option>
+            <option value="8">Catherine</option>
+        </select>
+    </div>
+    <h5>Send request(s) to friends to plan a study session.</h5>
+    <a id="openForm" class="btn new-event-btn" onclick="openForm()">Send Request</a>
+    <a id="yourRequests" class="btn new-event-btn">Your Requests</a>
+
+    <!-- Popup Section -->
+    <div id="requestFormBox">
+        <div class="popup-box">
+            <div class="popup-header">
+                <h3>Send Requests</h3>
+                <a onclick="closeForm()"><i class="fas fa-times"></i></a>
+            </div>
+
+            <form class="popup-form">
+                <label for="name">User Name</label>
+                <input type="text" class="my-input-field" placeholder="Name" name="name" required>
+                <label for="friend">Study Buddy</label>
+                <input type="text" class="my-input-field" placeholder="Friend's name" name="friend" required>
+            </form>
+            <div class="wrapper">
+                <button type="button" class="btn cancel-btn" onclick="closeForm()">Cancel</button>
+                <button type="button" class="btn new-event-btn">Send Request</button>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Section End -->
+    
+    <h5 class="footer-text"> Want to study now? Look who's available above. </h5>
+</div>
+{% endblock content %}
+<!-- Content Section End -->
+
+{% block footer_script %}
+    <!-- JavaScript -->
+    <script src="{% static 'js/buddy.js' %}"></script>
+{% endblock footer_script %}
