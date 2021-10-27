@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <!-- My CSS Styling Sheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock stylesheet%}
+
+{% block content %}
+<h1>
+    Thread list
+</h1>
+<a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
+<div class="container ftnr">
+    {% for thread in threads %}
+    <div class="container ftnr">
+        <p> Title: {{thread.title}} </p>
+        <p> Last updated: {{thread.updated}} </p>
+        <p> {{thread.description}} </p>
+    </div>
+    <div>
+    <a class="btn btn-primary" type="button" href="{% url 'thread' thread.id %}">View this thread</a>
+    </div>
+    {% empty %}
+        <h3>no active thread</h3>
+    {% endfor %}
+</div>
+{% endblock content %}

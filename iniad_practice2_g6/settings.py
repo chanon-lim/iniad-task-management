@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tasks',
     'buddy',
-    'debug_toolbar'
+    'forum.apps.ForumConfig',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [

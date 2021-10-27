@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tasks/', include('tasks.urls')),
     path('buddy/', include('buddy.urls')),
+    path('forum/', include('forum.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
 ]
 
