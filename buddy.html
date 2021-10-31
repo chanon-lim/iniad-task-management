@@ -125,6 +125,9 @@
                         <option value="10">15:30-16:30</option>
                         <option value="11">16:30-17:30</option>
                     </select>
+                    <!--To link with Task Dashboard-->
+                    <p class="connect"> See <a href="index.html" class="links">Task Dashboard</a> for help.</p>
+                    <!--Link End-->
                 </div>
                 <div class="custom-select">
                     <h5>Check when others are available.</h5>
@@ -142,7 +145,25 @@
                 </div>
                 <h5>Send request(s) to friends to plan a study session.</h5>
                 <a id="openForm" class="btn new-event-btn" onclick="openForm()">Send Request</a>
-                <a id="yourRequests" class="btn new-event-btn">Your Requests</a>
+                <a id="yourRequests" class="btn new-event-btn" onclick="seeRequest()">Your Requests</a>
+
+                <!--Popup message to see who has sent you requests-->
+                <div id="yourMsg">
+                    <div class="popup-box">
+                        <div class="popup-header">
+                        <h3>Received Requests</h3>
+                        <a onclick="closeMsg()"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div id="requests">
+                        <ul>
+                            <li>John has requested to study with you (13:34)</li>
+                            <li>Holly has requested to study with you (31/10/2021)</li>
+                            <li>Htet has requested to study with you (12/10/2021)</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <!--End of popup message-->
 
                 <!-- Popup Section -->
                 <div id="requestFormBox">
