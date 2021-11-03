@@ -11,13 +11,13 @@
 <h1>
     Create new thread
 </h1>
-
-<form method="POST" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-
-    <input type="submit" value="Submit">
-</form>
+<div class="thread-container">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
 {% endblock content %}
 

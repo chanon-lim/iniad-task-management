@@ -33,7 +33,6 @@ $('#id_time').timepicki({
 document.addEventListener("DOMContentLoaded", function () {
     var calendarEl = document.getElementById("calendar");
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialDate: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
         businessHours: true,
         dayMaxEvents: true,
         themeSystem: 'bootstrap',

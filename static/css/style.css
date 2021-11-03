@@ -310,7 +310,8 @@ a {
 /* Header */
 /* ------ */
 
-.buddy-header {
+.website-header {
+    text-align: center;
     padding: 20px;
     width: 100%;
     margin: 0;
@@ -320,26 +321,24 @@ a {
     border-bottom: 1px solid #dee2e6;
 }
 
-.buddy-header h2 {
-    text-align: center;
+.website-header h2 {
     color: #4B4C74;
     font-weight: 700;
     margin: auto;
     padding: 20px 16px 16px 0;
 }
 
-.buddy-header .header-icon {
+.website-header .header-icon {
     padding-bottom: 10px;
-    text-align: center;
 }
 
-.buddy-header .header-icon .person-icon{
+.website-header .header-icon .person-icon{
     white-space: nowrap;
     padding: 0 5px;
     color: #54557B;
 }
 
-.buddy-header .header-icon .person-icon i{
+.website-header .header-icon .person-icon i{
     padding-right: 5px;
 }
 
@@ -423,26 +422,58 @@ a {
     margin: 20px auto;
 }
 
-.thread-container .card {
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
+.website-header h1 {
+    color: #17194C;
+    font-weight: 600;
 }
 
-.thread-container .card:hover {
+#scrollToTopBtn {
+    /* button styling */
+    background-color: #212529; 
+    color: #FFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px; 
+    padding: 0 9px;
+    user-select: none;
+
+    /* placing at the bottom */
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    z-index: 100;
+    opacity: 0;
+    /* transform: translateY(100px); */
+    transition: all 0.5s ease; 
+}
+
+.showBtn {
+    opacity: 0.5 !important;
+    /* transform: translateY(0); */
+}
+
+.thread-container .thread-list {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.thread-container .thread-list:hover {
     background-color: #F7F7F7;
     transition: all 0.3s ease;
 }
 
-.thread-container .card-body a {
+.thread-container .thread-list .card-body a {
     color: #17194C;
 }
 
-.thread-container .card .card-title {
+.thread-container .thread-list .card-title {
     font-weight: 600;
 }
 
-.thread-container .card .last-updated {
+.thread-container .thread-list .last-updated {
     font-size: 0.875em;
     color: #6c757d;
     margin-top: 0;
