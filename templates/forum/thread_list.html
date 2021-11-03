@@ -10,7 +10,7 @@
 <h1>
     Thread list
 </h1>
-<a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
+<a class="btn btn-secondary" type="button" href="{% url 'forum:create_thread' %}">Create new thread</a>
 <div class="container ftnr">
     {% for thread in threads %}
     <div class="container ftnr">
@@ -19,7 +19,7 @@
         <p> {{thread.description}} </p>
     </div>
     <div>
-    <a class="btn btn-primary" type="button" href="{% url 'thread' thread.id %}">View this thread</a>
+    <a class="btn btn-primary" type="button" href="{% url 'forum:thread' thread.id %}">View this thread</a>
     </div>
     {% empty %}
         <h3>no active thread</h3>

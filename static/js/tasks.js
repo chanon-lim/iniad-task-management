@@ -340,3 +340,26 @@ function run() {
     }
 }
 //run();
+
+//Test make AJAX POST request, when user press button 'Save' -> will send POST request to server and get back response
+//test if this block work?
+//console.log("{% url 'ajax' %}"); // result: /ajax/
+// yes, this block work
+$(".popup-form").submit(function (e) {
+    e.preventDefault();
+    var serializedData = $(this).serialize();
+    console.log("Ajax function fired!");
+    $.ajax({
+        type: "POST",
+        url: ajax_handle_url, //this url is variable from the template html
+        data: serializedData,
+        success: function (response) {
+            console.log("Make the POST request successfully"); //yay, success
+            console.log(response);
+            console.log(typeof(response));
+        },
+        error: function (response) {
+            console.log("Fail in making POST request");
+        }
+    });
+});

@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tasks',
-    'buddy',
+    'tasks.apps.TasksConfig',
+    'buddy.apps.BuddyConfig',
     'forum.apps.ForumConfig',
 ]
 
