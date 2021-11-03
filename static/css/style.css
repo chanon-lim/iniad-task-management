@@ -412,20 +412,9 @@ a {
 
 /* ----------------------------------------------------------------------------------- */
 
-/* ---------- */
-/* Forum Page */
-/* ---------- */
-
-.thread-container {
-    max-width: 800px;
-    width: 100%;
-    margin: 20px auto;
-}
-
-.website-header h1 {
-    color: #17194C;
-    font-weight: 600;
-}
+/* ----------------- */
+/* Forum Thread List */
+/* ----------------- */
 
 #scrollToTopBtn {
     /* button styling */
@@ -454,6 +443,17 @@ a {
     /* transform: translateY(0); */
 }
 
+.thread-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.website-header h1 {
+    color: #17194C;
+    font-weight: 600;
+}
+
 .thread-container .thread-list {
     border-radius: 10px;
     padding: 10px;
@@ -473,14 +473,103 @@ a {
     font-weight: 600;
 }
 
-.thread-container .thread-list .last-updated {
+.last-updated {
     font-size: 0.875em;
     color: #6c757d;
     margin-top: 0;
 }
 
+/* ------------------- */
+/* Forum Create Thread */
+/* ------------------- */
 
+.create-thread {
+    margin: 10px;
+    padding: 20px;
+}
 
+.create-thread h4 {
+    font-weight: 600;
+    color: #17194C;
+    border-bottom: 1px solid #4B4C74;
+    margin-bottom: 20px;
+}
+
+.thread-container input, textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #6c757d;
+    padding: 5px 10px
+} 
+
+.thread-container input {
+    margin-bottom: 5px;
+}
+
+.thread-container textarea {
+    height: 200px;
+}
+
+/* ----------------- */
+/* Forum Thread View */
+/* ----------------- */
+
+.thread {
+    padding: 40px;
+}
+
+.thread .thread-body {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 0 0 30px;
+}
+
+.thread .post-comment {
+    margin: 30px 0;
+}
+
+.all-comments h5 {
+    font-weight: 600;
+    color: #17194C;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.all-comments .comment {
+    margin: 20px 0;
+}
+
+.all-comments .comment:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.all-comments .comment i {
+    font-size: 1.5rem;
+    font-weight: 200;
+    display: inline;
+    padding-right: 5px;
+}
+
+.comment .comment-head {
+    margin-bottom: 10px;
+    display: table;
+} 
+
+.comment .comment-head .comment-name,
+.comment .comment-head .last-updated  {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.comment .comment-head .comment-name {
+    font-weight: 600;
+}
+
+.comment .comment-content {
+    padding-left: 1.7rem;
+    font-size: 0.9em;
+}
 
 
 /* ----------------------------------------------------------------------------------- */

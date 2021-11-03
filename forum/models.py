@@ -4,9 +4,9 @@ from django.db.models.base import Model
 # Create your models here.
 
 class Thread(models.Model):
-    creator = models.CharField(max_length=30,null=False, blank=False, default="anonymous")
-    title = models.CharField(max_length=200,null=False, blank=False)
-    description = models.TextField(null=False, blank=False)
+    creator = models.CharField(verbose_name="", max_length=30,null=False, blank=False, default="anonymous")
+    title = models.CharField(verbose_name="", max_length=200,null=False, blank=False)
+    description = models.TextField(verbose_name="", null=False, blank=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now = True)
 

@@ -7,16 +7,15 @@
 {% endblock stylesheet%}
 
 {% block content %}
-
-<h1>
-    Create new thread
-</h1>
 <div class="thread-container">
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit">
-    </form>
+    <div class="card create-thread">
+        <h4 class="card-title">Create a thread</h4>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn new-event-btn" type="submit" value="Post">
+        </form>
+    </div>
 </div>
 
 {% endblock content %}

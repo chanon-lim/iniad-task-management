@@ -26,6 +26,26 @@ class CreateThread(CreateView):
     fields = ['creator', 'title', 'description']
     success_url = reverse_lazy('forum:home')
 
+    def get_form(self, form_class=None):
+        if form_class is None:
+            form_class = self.get_form_class()
+
+        form = super(CreateThread, self).get_form(form_class)
+        form.fields['creator'].widget.attrs = {
+            'placeholder': 'Name',
+            'class': 'Thread'
+        }
+        form.fields['title'].widget.attrs = {
+            'placeholder': 'Title',
+            'class': 'Thread'
+        }
+        form.fields['description'].widget.attrs = {
+            'placeholder': 'Text',
+            'class': 'Thread'
+        }
+
+        return form
+
 def HandlingThread(request, pk):
     thread = Thread.objects.get(id=pk)
 

@@ -2,53 +2,50 @@
 {% load static %}
 
 {% block stylesheet %}
-    <!-- My CSS Styling Sheet -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- My CSS Styling Sheet -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock stylesheet%}
 
 {% block content %}
-<div class="container ftnr">
-<h1>
-    {{thread.title}}
-</h1>
-<p>
-    Created by: {{thread.creator}}
-</p>
-<p>
-    {{thread.description}}
-</p>
+<div class="thread-container">
+    <div class="card thread"> 
+        <!-- Thread Post -->
+        <div class="thread-body">
+            <h2 class="card-title">{{thread.title}}</h2>
+            <p class="last-updated">Posted by {{thread.creator}} on {{thread.created}}</p>
+            <p class="card-text">{{thread.description}}</p>
+        </div>
+        <!-- Post a comment -->
+        <div class="post-comment">
+            <form method="POST" action="" id="msgform">
+                {% csrf_token %}
+                <label for="creator">Comment as </label><input type="text" id="creator" name="creator" value="anonymous" placeholder="Name">
+                <textarea rows="4" cols="50" id="message" name="message" placeholder="What are your thought?"></textarea>
+                <input class="btn new-event-btn" type="submit" value="Comment">
+            </form>
+        </div>
+        <!-- Comments -->
+        <div class="all-comments">
+            <h5>Comments</h5>
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-head">
+                    <i class="far fa-user-circle"></i>
+                    <span class="comment-name"> {{comment.creator}}</span><span class="last-updated"> | {{comment.created}}</span>
+                </div>
+                <p class="comment-content">{{comment.message}}</p>
+            </div>
+            {% empty %}
+            <p>
+                No comment has been made.
+            </p>
+            {% endfor %}
+        </div>
+    </div>
 </div>
-{% for comment in comments %}
-<div class="container">
-<p>
-    Sent by: {{comment.creator}} on {{comment.created}}
-</p>
-<p>
-    {{comment.message}}
-</p>
-</div>
-<hr>
-{% empty %}
-<p>
-    No comment has been made.
-</p>
-{% endfor %}
-<div>
-<h3> Post new comment: </h3>
-<form method="POST" action="" id="msgform">
-    {%csrf_token%}
-    <label for="creator">Creator:</label>
-    <input type="textarea" id="creator" name="creator" value="anonymous"><br>
-    <label for="message">Message:</label>
-    <textarea rows="4" cols="50" id="message" name="message"></textarea>
-    <br>
-    <input type="submit" value="Submit">
-</form>
-</div>
-
 {% endblock content %}
 
 {% block footer_script %}
-    <!-- JavaScript -->
-    <script src="{% static 'js/forum.js' %}"></script>
+<!-- JavaScript -->
+<script src="{% static 'js/forum.js' %}"></script>
 {% endblock footer_script %}
