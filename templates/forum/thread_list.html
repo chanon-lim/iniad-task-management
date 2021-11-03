@@ -7,22 +7,28 @@
 {% endblock stylesheet%}
 
 {% block content %}
-<h1>
-    Thread list
-</h1>
-<a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
-<div class="container ftnr">
+<div class="thread-container">
+    <h1>Thread list</h1>
+    <a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
+
     {% for thread in threads %}
-    <div class="container ftnr">
-        <p> Title: {{thread.title}} </p>
-        <p> Last updated: {{thread.updated}} </p>
-        <p> {{thread.description}} </p>
-    </div>
-    <div>
-    <a class="btn btn-primary" type="button" href="{% url 'thread' thread.id %}">View this thread</a>
+    <div class="card">
+        <div class="card-body">
+            <a href="{% url 'thread' thread.id %}">
+                <h5 class="card-title">{{thread.title}}</h5>
+                <p class="card-text">{{thread.description}}</p>
+                <p class="card-text last-updated">Last updated: {{thread.updated}}</p>
+                <!-- <a class="btn btn-thread" type="button" href="">View Thread</a> -->
+            </a>
+        </div>
     </div>
     {% empty %}
         <h3>no active thread</h3>
     {% endfor %}
 </div>
 {% endblock content %}
+
+{% block footer_script %}
+    <!-- JavaScript -->
+    <script src="{% static 'js/forum.js' %}"></script>
+{% endblock footer_script %}

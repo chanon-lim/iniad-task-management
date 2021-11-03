@@ -414,6 +414,46 @@ a {
 /* ----------------------------------------------------------------------------------- */
 
 /* ---------- */
+/* Forum Page */
+/* ---------- */
+
+.thread-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.thread-container .card {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.thread-container .card:hover {
+    background-color: #F7F7F7;
+    transition: all 0.3s ease;
+}
+
+.thread-container .card-body a {
+    color: #17194C;
+}
+
+.thread-container .card .card-title {
+    font-weight: 600;
+}
+
+.thread-container .card .last-updated {
+    font-size: 0.875em;
+    color: #6c757d;
+    margin-top: 0;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------- */
+/* ---------- */
 /* Responsive */
 /* ---------- */
 
