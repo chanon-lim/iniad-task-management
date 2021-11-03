@@ -49,6 +49,15 @@
             <h2>Exams</h2>
         </div>
         <div class="dashboard-content no-border-right">
+            {% if event_list %}
+                <ul>
+                    {% for event in event_list %} 
+                        <li>{{event.title}}<br>Deadline: {{event.deadline}}</li>
+                    {% endfor %} 
+                </ul>
+            {% else %} 
+                <p>No events are available.</p>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -61,16 +70,18 @@
         </div>
     
         <form class="popup-form">
+            {% csrf_token %}
             <label for="id_title">Title</label>
-            <input class="my-input-field" id="id_title" type="text">
+            <input class="my-input-field" id="id_title" type="text" name="title">
             <label for="id_date">Date</label>
-            <input class="my-input-field" id="id_date" type="text" placeholder="YYYY/MM/DD">
+            <input class="my-input-field" id="id_date" type="text" placeholder="YYYY/MM/DD" name="date">
             <label for="id_time">Time</label>
-            <input class="my-input-field" id="id_time" type="text" placeholder="23:59">
+            <input class="my-input-field" id="id_time" type="text" placeholder="23:59" name="time">
             <label for="id_content">Content</label>
-            <textarea class="my-input-field" id="id_content" rows="4" cols="30"></textarea>
+            <textarea class="my-input-field" id="id_content" rows="4" cols="30" name="content"></textarea>
             <label for="id_tag">Tag</label>
-            <input class="my-input-field" id="id_tag" type="text">
+            <input class="my-input-field" id="id_tag" type="text" name="tag">
+            <input type="submit" value="Submit (Test)">
         </form>
         <div class="wrapper">
             <button type="button" class="btn cancel-btn" onclick="onClose()">Cancel</button>
@@ -84,5 +95,8 @@
     
 {% block footer_script %}
     <!-- JavaScript -->
+    <script>
+        let ajax_handle_url = "{% url 'tasks:ajax' %}";
+    </script>
     <script src="{% static 'js/tasks.js' %}"></script>
 {% endblock footer_script %}

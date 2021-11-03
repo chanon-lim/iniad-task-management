@@ -24,7 +24,7 @@ class ThreadList(ListView):
 class CreateThread(CreateView):
     model = Thread
     fields = ['creator', 'title', 'description']
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('forum:home')
 
 def HandlingThread(request, pk):
     thread = Thread.objects.get(id=pk)
@@ -47,7 +47,7 @@ def HandlingThread(request, pk):
         'last_update': last_update
     }
 
-    return render(request, 'thread.html', context)
+    return render(request, 'forum/thread.html', context)
     
     
 

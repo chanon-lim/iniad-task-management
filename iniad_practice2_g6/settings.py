@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ea0$2fbdo5z#=x7@ab=)zi@p4w=gwkb@na89&kw!ip73ni4=u=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tasks',
-    'buddy',
+    'tasks.apps.TasksConfig',
+    'buddy.apps.BuddyConfig',
     'forum.apps.ForumConfig',
 ]
 

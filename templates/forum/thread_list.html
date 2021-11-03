@@ -7,18 +7,22 @@
 {% endblock stylesheet%}
 
 {% block content %}
-<div class="thread-container">
-    <h1>Thread list</h1>
-    <a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
+<!-- Go to Top Button -->
+<a><i id="scrollToTopBtn" class="fas fa-angle-up fa-3x"></i></a>
 
+<div class="website-header">
+    <h1>INIAD Forum</h1>
+    <a class="btn new-event-btn" href="{% url 'forum:create_thread' %}"><i class="fas fa-plus"></i> Create New Thread</a>
+</div>
+
+<div class="thread-container">
     {% for thread in threads %}
-    <div class="card">
+    <div class="card thread-list">
         <div class="card-body">
-            <a href="{% url 'thread' thread.id %}">
+            <a href="{% url 'forum:thread' thread.id %}">
                 <h5 class="card-title">{{thread.title}}</h5>
                 <p class="card-text">{{thread.description}}</p>
                 <p class="card-text last-updated">Last updated: {{thread.updated}}</p>
-                <!-- <a class="btn btn-thread" type="button" href="">View Thread</a> -->
             </a>
         </div>
     </div>

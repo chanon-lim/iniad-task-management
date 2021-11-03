@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 django-debug-toolbar = "*"
+gunicorn = "==19.9.0"
 
 [dev-packages]
 
