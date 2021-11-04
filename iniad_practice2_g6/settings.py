@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ea0$2fbdo5z#=x7@ab=)zi@p4w=gwkb@na89&kw!ip73ni4=u=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # allow django use any domain
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.sessions',  # add to try to enter admin page, ok can enter admin page now
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tasks.apps.TasksConfig',

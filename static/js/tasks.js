@@ -340,6 +340,44 @@ function run() {
 }
 //run();
 
+//the following code run the first time when the page load
+//update the event flow pane
+
+for (let eventData of firstTimeLoadDataJson) {
+    console.log(eventData); //ok worked
+    let title = eventData["fields"]["title"];
+    let content = eventData["fields"]["content"];
+    let tag = "";
+    let deadline = eventData["fields"]["deadline"].split("T");
+    let date = deadline[0];
+    let time = deadline[1];
+    time = time.slice(0, time.length-1); //to cut the last Z in time "11:00:00Z"
+    time = time.split(":");
+    date = date.split("-");
+    let year = Number(date[0]);
+    let month = Number(date[1]-1);
+    let day = Number(date[2]);
+    let hour = Number(time[0]);
+    let min = Number(time[1]);
+    let eventDate = new Date(year, month, day, hour, min);
+
+    let event = new CalendarEvent(title, content, tag, eventDate);
+    eventFlow.push(event);
+    // console.log(deadline);
+    // console.log(typeof(deadline));
+    //console.log(deadline.split("T"));
+    // console.log("time", time);
+    // console.log(title) //ok worked
+}
+eventFlow.sort(function(a, b){return a.notifyTime - b.notifyTime});
+
+// populate the event flow pane for the first time when page load
+run();
+
+
+
+
+
 //Test make AJAX POST request, when user press button 'Save' -> will send POST request to server and get back response
 //test if this block work?
 //console.log("{% url 'ajax' %}"); // result: /ajax/
@@ -356,6 +394,8 @@ $(".popup-form").submit(function (e) {
             console.log("Make the POST request successfully"); //yay, success
             console.log(response);
             console.log(typeof(response));
+            let a = JSON.parse(response); //perfect solution!!!!, change the array string to array muahaha
+            console.log(a);
         },
         error: function (response) {
             console.log("Fail in making POST request");

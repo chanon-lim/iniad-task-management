@@ -2,8 +2,11 @@ from django import template
 from django.shortcuts import render
 from django.template import context, loader
 from django.http import HttpResponse, JsonResponse
+from django.core import serializers
 import datetime
+from django.forms.models import model_to_dict
 from .models import Event
+
 
 # Create your views here.
 
@@ -25,9 +28,33 @@ def index(request):
 
     event_list = Event.objects.order_by('-deadline')
     template = loader.get_template('tasks/index.html')
+    test_data = {'hello': 'world'}
+    # for event in event_list:
+    #     print(event) # Event 2
+    #     print(type(event)) # <class 'tasks.models.Event'>
+    data_json = serializers.serialize('json', event_list)
+    print(data_json)
+    print(type(data_json)) # str, get the string in javascript
+    ############################
+    # print('instance.__dict__')
+    # for event in event_list:
+    #     print(event.__dict__) 
+    #     data_json = event.__dict__ # error in javascript Object of type ModelState is not JSON serializable
+    ###############################
+    # for event in event_list:
+    #     print("model_to_dict")
+    #     print(model_to_dict(event))
+    ###############################
+    # for event in event_list:
+    #     print("serializers")
+    #     print(serializers.serialize('json', event)) # error, event cannot serialize
+    ##############################
+    print(data_json)
     context = {
         'event_list': event_list,
-    }
+        'test_data': test_data,
+        'data_json': data_json
+    } 
     return HttpResponse(template.render(context, request))
 
 def ajax_post(request):
@@ -50,4 +77,5 @@ def ajax_post(request):
         "name": "ajax response",
         "date": "today"
     }
-    return JsonResponse(context)
+    context = serializers.serialize('json', event_list)
+    return JsonResponse(context, safe=False)

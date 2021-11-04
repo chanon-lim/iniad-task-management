@@ -95,8 +95,25 @@
     
 {% block footer_script %}
     <!-- JavaScript -->
+    {{test_data|json_script:"data_server"}}
+    <!-- {{data_json|json_script:"data_json"}} -->
+    {{data_json|json_script:"data_json"}}
     <script>
         let ajax_handle_url = "{% url 'tasks:ajax' %}";
+        let data_from_server = "{{event_list}}";
+        console.log(data_from_server);
+        console.log(typeof(data_from_server));
+        let data2 = JSON.parse(document.getElementById("data_server").textContent);
+        console.log(data2);
+        ///////////
+        // let data3 = JSON.parse(document.getElementById("data_json").textContent);
+        // console.log(data3);
+        // console.log(typeof(data3)); //string
+        ////////////
+        let firstTimeLoadData = JSON.parse(document.getElementById("data_json").textContent);
+        console.log(firstTimeLoadData);
+        let firstTimeLoadDataJson = JSON.parse(firstTimeLoadData);
+        console.log(firstTimeLoadDataJson);
     </script>
     <script src="{% static 'js/tasks.js' %}"></script>
 {% endblock footer_script %}
