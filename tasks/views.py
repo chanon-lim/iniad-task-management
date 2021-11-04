@@ -25,16 +25,19 @@ def index(request):
         deadline = datetime.datetime(year, month, day, hour, min)
         new_event_data = Event(title=title, deadline=deadline)
         new_event_data.save()
-
-    event_list = Event.objects.order_by('-deadline')
+    # only query event later than current time
+    event_list = Event.objects.filter(deadline__gt=datetime.datetime.now())
+    for event in event_list:
+        print('Filter event:', event)
+    # event_list = Event.objects.order_by('-deadline')
     template = loader.get_template('tasks/index.html')
     test_data = {'hello': 'world'}
     # for event in event_list:
     #     print(event) # Event 2
     #     print(type(event)) # <class 'tasks.models.Event'>
     data_json = serializers.serialize('json', event_list)
-    print(data_json)
-    print(type(data_json)) # str, get the string in javascript
+    # print(data_json)
+    # print(type(data_json)) # str, get the string in javascript
     ############################
     # print('instance.__dict__')
     # for event in event_list:
@@ -49,7 +52,7 @@ def index(request):
     #     print("serializers")
     #     print(serializers.serialize('json', event)) # error, event cannot serialize
     ##############################
-    print(data_json)
+    # print(data_json)
     context = {
         'event_list': event_list,
         'test_data': test_data,

@@ -49,7 +49,7 @@
             <h2>Exams</h2>
         </div>
         <div class="dashboard-content no-border-right">
-            {% if event_list %}
+            <!-- {% if event_list %}
                 <ul>
                     {% for event in event_list %} 
                         <li>{{event.title}}<br>Deadline: {{event.deadline}}</li>
@@ -57,7 +57,7 @@
                 </ul>
             {% else %} 
                 <p>No events are available.</p>
-            {% endif %}
+            {% endif %} -->
         </div>
     </div>
 </div>
@@ -81,7 +81,12 @@
             <textarea class="my-input-field" id="id_content" rows="4" cols="30" name="content"></textarea>
             <label for="id_tag">Tag</label>
             <input class="my-input-field" id="id_tag" type="text" name="tag">
-            <input type="submit" value="Submit (Test)">
+            <!--This button will trigger the form submit data to server and it is hidden
+            The 'Save' button will trigger 'click' event on this button
+            This is a strange design but now it works-->
+            <input type="submit" value="Submit (Test)" class="btn new-event-btn" id="submitTestBtn" hidden>
+            <!-- <button type="button" class="btn cancel-btn" onclick="onClose()">Cancel</button>
+            <input type="submit" class="btn new-event-btn" onclick="onSave()" value="Save"> -->
         </form>
         <div class="wrapper">
             <button type="button" class="btn cancel-btn" onclick="onClose()">Cancel</button>

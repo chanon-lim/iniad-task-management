@@ -87,10 +87,16 @@ let nextEvent; //next notified event, make this global is a bad programming beha
 /**Pop up the input box */
 function openPopup() {
     //alert("fired");
+    // let inputField = document.getElementsByClassName("my-input-field");
+    // for (let field of inputField) {
+    //     field.value = "";
+    // }
     document.getElementById("mycreateEventBox").classList.add("active");
 }
 
-/**Close the input box and clear all the input in*/
+/**Close the input box and clear all the input in
+ * Note: even not clear each field -> still auto delete
+*/
 function onClose() {
     let createEventBox = document.getElementById("mycreateEventBox");
     let inputField = document.getElementsByClassName("my-input-field");
@@ -309,6 +315,11 @@ function onSave() {
     // alert(nextEvent.getNotifyTime());
     // alert(timeUntilNotify);
     console.log('eventFlow: ', eventFlow);
+    // This is a strange approach but it is worked at this moment.
+    // Make a different input with submit function, and when click the button save -> trigger that submit button
+    let submitTestBtn = document.getElementById("submitTestBtn");
+    submitTestBtn.click();
+    //alert('after send data!!');
     onClose(); //close the input box
     run();
 }
