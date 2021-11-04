@@ -15,3 +15,12 @@ function openForm(){
 function closeForm(){
   document.getElementById("requestFormBox").classList.remove("active");
 }
+
+
+function seeRequest(){
+  document.getElementById("yourMsg").classList.add("active");
+}
+
+function closeMsg(){
+  document.getElementById("yourMsg").classList.remove("active");
+}

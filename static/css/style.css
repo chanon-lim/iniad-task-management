@@ -400,6 +400,26 @@ a {
     display: block;
 }
 
+#yourMsg{
+    display:none;
+}
+
+#yourMsg.active{
+    display:block;
+}
+
+#requests{
+    padding: 25px;
+    text-align: justify;
+    
+}
+
+.connect{
+    color:#babace;
+    font-weight:100;
+}
+
+
 /* ------ */
 /* Footer */
 /* ------ */
