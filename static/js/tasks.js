@@ -245,7 +245,7 @@ function updateEventFlow() {
     }
 }
 
-/**This function run when click save button, will create new Event and add that event to the store structure*/
+/**This function will create new Event and add that event to the store structure*/
 function onSave() {
     let data = getInputData();
     // alert(data); //abc,abc,2021/10/23,0816,khan
@@ -317,8 +317,6 @@ function onSave() {
     console.log('eventFlow: ', eventFlow);
     // This is a strange approach but it is worked at this moment.
     // Make a different input with submit function, and when click the button save -> trigger that submit button
-    let submitTestBtn = document.getElementById("submitTestBtn");
-    submitTestBtn.click();
     //alert('after send data!!');
     onClose(); //close the input box
     run();
@@ -385,7 +383,16 @@ eventFlow.sort(function(a, b){return a.notifyTime - b.notifyTime});
 // populate the event flow pane for the first time when page load
 run();
 
-
+/**This function run when the Save button clicked
+ * will close the create event popup form
+ * and send data to the server
+ * This action actually click a hidden form button
+ * this is a weird approach but now not have better solution
+ */
+function onSaveButtonClicked() {
+    let submitTestBtn = document.getElementById("submitTestBtn");
+    submitTestBtn.click();
+}
 
 
 
@@ -397,6 +404,7 @@ $(".popup-form").submit(function (e) {
     e.preventDefault();
     var serializedData = $(this).serialize();
     console.log("Ajax function fired!");
+    onSave();
     $.ajax({
         type: "POST",
         url: ajax_handle_url, //this url is variable from the template html
