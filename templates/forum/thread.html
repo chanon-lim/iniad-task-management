@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block stylesheet %}
 <!-- My CSS Styling Sheet -->
@@ -26,7 +27,7 @@
         </div>
         <!-- Comments -->
         <div class="all-comments">
-            <h5>Comments</h5>
+            <h5>{% translate 'Comments' %}</h5>
             {% for comment in comments %}
             <div class="comment">
                 <div class="comment-head">
@@ -37,7 +38,7 @@
             </div>
             {% empty %}
             <p>
-                No comment has been made.
+                {% translate 'No comment has been made.' %}
             </p>
             {% endfor %}
         </div>

@@ -6,9 +6,15 @@ from django.core import serializers
 import datetime
 from django.forms.models import model_to_dict
 from .models import Event
+from django.utils.translation import gettext as _
 
 
 # Create your views here.
+def trans_test(request):
+    from iniad_practice2_g6 import settings
+    return HttpResponse(settings.LOCALE_PATHS)
+    output = _("Forum")
+    return HttpResponse(output)
 
 def index(request):
     if request.method == "POST":

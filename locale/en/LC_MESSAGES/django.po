@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-07 18:17+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\forum\views.py:35 .\templates\buddy\buddy.html:117
+msgid "Your Name"
+msgstr ""
+
+#: .\forum\views.py:39 .\templates\tasks\index.html:75
+msgid "Title"
+msgstr ""
+
+#: .\forum\views.py:43
+msgid "Text"
+msgstr ""
+
+#: .\iniad_practice2_g6\settings.py:135
+msgid "Japanese"
+msgstr ""
+
+#: .\iniad_practice2_g6\settings.py:136
+msgid "English"
+msgstr ""
+
+#: .\iniad_practice2_g6\urls.py:23
+msgid "admin/"
+msgstr ""
+
+#: .\tasks\views.py:16 .\templates\base.html:47 .\templates\base.html:71
+msgid "Forum"
+msgstr ""
+
+#: .\templates\base.html:43 .\templates\base.html:67
+#: .\templates\buddy\buddy.html:68
+msgid "Task Dashboard"
+msgstr ""
+
+#: .\templates\base.html:51 .\templates\base.html:75
+#: .\templates\buddy\buddy.html:118
+msgid "Study Buddy"
+msgstr ""
+
+#: .\templates\base.html:79
+msgid "Languages"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:16
+msgid "AVAILABLE NOW"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:40
+msgid "Find a study buddy!"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:42
+msgid "Input the time(s) you are available."
+msgstr ""
+
+#: .\templates\buddy\buddy.html:44
+msgid "Select days:"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:45
+msgid "Monday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:46
+msgid "Tuesday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:47
+msgid "Wednesday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:48
+msgid "Thursday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:49
+msgid "Friday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:50
+msgid "Saturday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:51
+msgid "Sunday"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:54
+msgid "Select time:"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:68
+msgid "See"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:68
+msgid "for help."
+msgstr ""
+
+#: .\templates\buddy\buddy.html:72
+msgid "Check when others are available."
+msgstr ""
+
+#: .\templates\buddy\buddy.html:74
+msgid "Select users:"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:85
+msgid "Send request(s) to friends to plan a study session."
+msgstr ""
+
+#: .\templates\buddy\buddy.html:86 .\templates\buddy\buddy.html:111
+#: .\templates\buddy\buddy.html:123
+msgid "Send Request"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:87
+msgid "Your Requests"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:93
+msgid "Received Requests"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:98 .\templates\buddy\buddy.html:99
+#: .\templates\buddy\buddy.html:100
+msgid "has requested to study with you"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:116
+msgid "Username"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:119
+msgid "Friend's name"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:122 .\templates\tasks\index.html:93
+msgid "Cancel"
+msgstr ""
+
+#: .\templates\buddy\buddy.html:129
+msgid "Want to study now? Look who's available above."
+msgstr ""
+
+#: .\templates\forum\thread.html:30
+msgid "Comments"
+msgstr ""
+
+#: .\templates\forum\thread.html:41
+msgid "No comment has been made."
+msgstr ""
+
+#: .\templates\forum\thread_form.html:13
+msgid "Create a thread"
+msgstr ""
+
+#: .\templates\forum\thread_list.html:16
+msgid "Create New Thread"
+msgstr ""
+
+#: .\templates\forum\thread_list.html:26
+msgid "Last updated"
+msgstr ""
+
+#: .\templates\tasks\index.html:29
+msgid "Today"
+msgstr ""
+
+#: .\templates\tasks\index.html:38
+msgid "Task"
+msgstr ""
+
+#: .\templates\tasks\index.html:39
+msgid "New Task"
+msgstr ""
+
+#: .\templates\tasks\index.html:44
+msgid "There is no upcoming event!"
+msgstr ""
+
+#: .\templates\tasks\index.html:50
+msgid "Exams"
+msgstr ""
+
+#: .\templates\tasks\index.html:69
+msgid "Create New Event"
+msgstr ""
+
+#: .\templates\tasks\index.html:77
+msgid "Date"
+msgstr ""
+
+#: .\templates\tasks\index.html:79
+msgid "Time"
+msgstr ""
+
+#: .\templates\tasks\index.html:81
+msgid "Content"
+msgstr ""
+
+#: .\templates\tasks\index.html:83
+msgid "Tag"
+msgstr ""
+
+#: .\templates\tasks\index.html:94
+msgid "Save"
+msgstr ""

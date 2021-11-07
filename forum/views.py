@@ -7,13 +7,13 @@ from django.forms import ModelForm
 from django import forms
 from django.views.generic import View
 import datetime
-
 from forum.models import Thread, Comment
 from django.views.generic.edit import CreateView, DeleteView, FormView
-# Create your views here.
-
 from django.http import HttpResponse
+from django.utils.translation import gettext_lazy as _
 
+
+# Create your views here.
 def TestingView(request):
     return HttpResponse("this is forum")
 
@@ -32,15 +32,15 @@ class CreateThread(CreateView):
 
         form = super(CreateThread, self).get_form(form_class)
         form.fields['creator'].widget.attrs = {
-            'placeholder': 'Name',
+            'placeholder': _('Your Name'),
             'class': 'Thread'
         }
         form.fields['title'].widget.attrs = {
-            'placeholder': 'Title',
+            'placeholder': _('Title'),
             'class': 'Thread'
         }
         form.fields['description'].widget.attrs = {
-            'placeholder': 'Text',
+            'placeholder': _('Text'),
             'class': 'Thread'
         }
 

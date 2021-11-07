@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block stylesheet %}
     <!-- My CSS Styling Sheet -->
@@ -12,7 +13,7 @@
 
 <div class="website-header">
     <h1>INIAD Forum</h1>
-    <a class="btn new-event-btn" href="{% url 'forum:create_thread' %}"><i class="fas fa-plus"></i> Create New Thread</a>
+    <a class="btn new-event-btn" href="{% url 'forum:create_thread' %}"><i class="fas fa-plus"></i> {% translate 'Create New Thread' %}</a>
 </div>
 
 <div class="thread-container">
@@ -22,7 +23,7 @@
             <a href="{% url 'forum:thread' thread.id %}">
                 <h5 class="card-title">{{thread.title}}</h5>
                 <p class="card-text">{{thread.description}}</p>
-                <p class="card-text last-updated">Last updated: {{thread.updated}}</p>
+                <p class="card-text last-updated">{% translate 'Last updated' %}: {{thread.updated}}</p>
             </a>
         </div>
     </div>

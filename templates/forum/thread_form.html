@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block stylesheet %}
     <!-- My CSS Styling Sheet -->
@@ -9,7 +10,7 @@
 {% block content %}
 <div class="thread-container">
     <div class="card create-thread">
-        <h4 class="card-title">Create a thread</h4>
+        <h4 class="card-title">{% translate 'Create a thread' %}</h4>
         <form method="POST" action="">
             {% csrf_token %}
             {{form.as_p}}

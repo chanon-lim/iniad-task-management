@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block head_script %}
     <!-- jQuery -->
@@ -25,7 +26,7 @@
 <div class="row">
     <div class="col-lg-4 col-sm-12 dashboard-col">
         <div class="dashboard-header">
-            <h2>Today</h2>
+            <h2>{% translate 'Today' %}</h2>
             <h4 class="today-date"></h4>
         </div>
         <div class="dashboard-content">
@@ -34,19 +35,19 @@
     </div>
     <div class="col-lg-4 col-sm-12 dashboard-col">
         <div class="dashboard-header">
-            <h2>Task</h2>
-            <a class="btn new-event-btn" onclick="openPopup()"><i class="fas fa-plus"></i> New Task</a>
+            <h2>{% translate 'Task' %}</h2>
+            <a class="btn new-event-btn" onclick="openPopup()"><i class="fas fa-plus"></i> {% translate 'New Task' %}</a>
         </div>
         <div class="dashboard-content" id="event-flow">
             <div class="no-task">
                 <i class="fas fa-tasks"></i>
-                <p>There is no upcoming event!</p>
+                <p>{% translate 'There is no upcoming event!' %}</p> 
             </div>
         </div>
     </div>
     <div class="col-lg-4 col-sm-12 dashboard-col no-border-right">
         <div class="dashboard-header">
-            <h2>Exams</h2>
+            <h2>{% translate 'Exams' %}</h2>
         </div>
         <div class="dashboard-content no-border-right">
             <!-- {% if event_list %}
@@ -65,21 +66,21 @@
 <div id="mycreateEventBox">
     <div class="popup-box">
         <div class="popup-header">
-            <h3>Create New Event</h3>
+            <h3>{% translate 'Create New Event' %}</h3>
             <a onclick="onClose()"><i class="fas fa-times"></i></a>
         </div>
     
         <form class="popup-form">
             {% csrf_token %}
-            <label for="id_title">Title</label>
+            <label for="id_title">{% translate 'Title' %}</label>
             <input class="my-input-field" id="id_title" type="text" name="title" required>
-            <label for="id_date">Date</label>
+            <label for="id_date">{% translate 'Date' %}</label>
             <input class="my-input-field" id="id_date" type="text" placeholder="YYYY/MM/DD" name="date" required>
-            <label for="id_time">Time</label>
+            <label for="id_time">{% translate 'Time' %}</label>
             <input class="my-input-field" id="id_time" type="text" placeholder="23:59" name="time" required>
-            <label for="id_content">Content</label>
+            <label for="id_content">{% translate 'Content' %}</label>
             <textarea class="my-input-field" id="id_content" rows="4" cols="30" name="content"></textarea>
-            <label for="id_tag">Tag</label>
+            <label for="id_tag">{% translate 'Tag' %}</label>
             <input class="my-input-field" id="id_tag" type="text" name="tag">
             <!--This button will trigger the form submit data to server and it is hidden
             The 'Save' button will trigger 'click' event on this button
@@ -89,8 +90,8 @@
             <input type="submit" class="btn new-event-btn" onclick="onSave()" value="Save"> -->
         </form>
         <div class="wrapper">
-            <button type="button" class="btn cancel-btn" onclick="onClose()">Cancel</button>
-            <button type="button" class="btn new-event-btn" onclick="onSaveButtonClicked()">Save</button>
+            <button type="button" class="btn cancel-btn" onclick="onClose()">{% translate 'Cancel' %}</button>
+            <button type="button" class="btn new-event-btn" onclick="onSaveButtonClicked()">{% translate 'Save' %}</button>
         </div>
     </div>
 </div>
