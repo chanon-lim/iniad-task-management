@@ -31,11 +31,11 @@ a {
 
 .sidebar .logo-details {
     padding-left: 35px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .sidebar .logo-details a {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #fff;
     padding-right: 10px;
@@ -703,11 +703,6 @@ a {
     .mobile-nav.active {
         display: block !important; 
     }
-
-    .mobile-nav .dropdown-menu {
-        transform: translate3d(100%, 230px, 0px)!important;
-    }
-    
     
 
     /* ------- */
